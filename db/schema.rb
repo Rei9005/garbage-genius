@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_060019) do
     t.bigint "spot_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "schedule_time"
+    t.time "scheduled_time"
     t.index ["spot_id"], name: "index_spot_dates_on_spot_id"
   end
 
