@@ -19,20 +19,20 @@ puts "Creating spots and users..."
 
 spot1 = Spot.create!(
   address: "2 Chome-11-3 Meguro, Meguro City, Tokyo 153-0063",
-  latitude: 35.6339864,
-  longtitude: 139.7081156,
+  lat: 35.6339864,
+  lng: 139.7081156,
   label: "Le Wagon"
 )
 spot2 = Spot.create!(
   address: "unnamed road, Shimomegura 3-chome, Meguro, 153-0064, Japan",
-  latitude: 35.6340941868853,
-  longtitude: 139.708171926389,
+  lat: 35.6340941868853,
+  lng: 139.708171926389,
   label: "spot2"
 )
 spot3 = Spot.create!(
   address: "unnamed road, Shimomeguro 3-chome, Meguro, 153-0064, Japan",
-  latitude: 35.6339450218337,
-  longtitude: 139.708337552796,
+  lat: 35.6339450218337,
+  lng: 139.708337552796,
   label: "spot3"
 )
 
@@ -45,8 +45,8 @@ hayato = User.create!(
   line_id: "tacomarutaco",
   address: "2-chōme-5-8 Meguro, Meguro City, Tokyo 153-0063",
   spot_id: spot2.id,
-  longtitude: 35.63388057,
-  latitude: 139.7084001,
+  lng: 35.63388057,
+  lat: 139.7084001,
   evening_alert: "21:00",
   morning_alert: "12:30"
 )
@@ -57,8 +57,8 @@ User.create!(
   line_id: "maxmaxreirei",
   address: "2-chōme-5-7 Meguro, Meguro City, Tokyo 153-0063",
   spot_id: spot3.id,
-  longtitude: 35.63421049,
-  latitude: 139.7082023,
+  lng: 35.63421049,
+  lat: 139.7082023,
   evening_alert: "",
   morning_alert: "12:20"
 )
@@ -68,8 +68,8 @@ User.create!(
   name: "Jun the Typhoon",
   line_id: "yoon_jjang",
   address: "2-chōme-7-17 Meguro, Meguro City, Tokyo 153-0063",
-  longtitude: 35.63399291,
-  latitude: 139.7084638,
+  lng: 35.63399291,
+  lat: 139.7084638,
   evening_alert: "",
   morning_alert: ""
 )
