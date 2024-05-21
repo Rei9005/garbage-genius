@@ -1,0 +1,2 @@
+class SpotVisitsController < ApplicationController
+end

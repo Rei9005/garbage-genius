@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Spot dates</h1>
+
+<div id="spot_dates">
+  <% @spot_dates.each do |spot_date| %>
+    <%= render spot_date %>
+    <p>
+      <%= link_to "Show this spot date", spot_date %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New spot date", new_spot_date_path %>

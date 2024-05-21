@@ -1,0 +1,2 @@
+class SpotDatesController < ApplicationController
+end
