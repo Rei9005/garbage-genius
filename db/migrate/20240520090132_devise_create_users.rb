@@ -14,15 +14,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       ## Rememberable
       t.datetime :remember_created_at
 
-      t.string :name
-      t.string :line_id
-      t.string :address
-      t.references :spot, foreign_key: true
-      t.float :lng
-      t.float :lat
-      t.time :morning_alert
-      t.time :evening_alert
-
 
 
       ## Trackable
