@@ -7,128 +7,190 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-puts 'Cleaning the DB...'
+puts "=========="
+puts "Cleaning the DB..."
 
 User.destroy_all
 Spot.destroy_all
-SpotDate.destroy_all
+# SpotDate.destroy_all
 Alert.destroy_all
 
-puts "Creating spots and users..."
+puts "Done cleaning the DB..."
+puts "----------"
+puts "Creating spots..."
 
+# spots close to the seeded users
 spot1 = Spot.create!(
-  address: "2 Chome-11-3 Meguro, Meguro City, Tokyo 153-0063",
-  lat: 35.6339864,
-  lng: 139.7081156,
-  label: "Le Wagon"
+  address: "Hayato's drop-off location",
+  lat: 35.651166,
+  lng: 139.733786,
+  label: "Hayato's drop-off location"
 )
 spot2 = Spot.create!(
-  address: "unnamed road, Shimomegura 3-chome, Meguro, 153-0064, Japan",
-  lat: 35.6340941868853,
-  lng: 139.708171926389,
-  label: "spot2"
+  address: "Rei's drop-off location",
+  lat: 35.64866328715169,
+  lng: 139.734738025795,
+  label: "Rei's drop-off location"
 )
 spot3 = Spot.create!(
-  address: "unnamed road, Shimomeguro 3-chome, Meguro, 153-0064, Japan",
-  lat: 35.6339450218337,
-  lng: 139.708337552796,
-  label: "spot3"
+  address: "Jun's closest drop-off location",
+  lat: 35.64870940673248,
+  lng: 139.73846075767176,
+  label: "Jun's closest drop-off location"
+)
+
+# 7 additional arbitrary spots in Minato
+
+spot4 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.65169078533378,
+  lng: 139.73371160956918,
+  label: "An arbitrary spot"
+)
+
+spot5 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.651258026916146,
+  lng: 139.7331926021248,
+  label: "An arbitrary spot"
+)
+
+spot6 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.649059018854324,
+  lng: 139.73416173486055,
+  label: "An arbitrary spot"
+)
+
+spot7 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.64870253145248,
+  lng: 139.73484838036836,
+  label: "An arbitrary spot"
+)
+
+spot8 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.649612475082215,
+  lng: 139.73796212077858,
+  label: "An arbitrary spot"
+)
+spot9 = Spot.create!(
+  address: "An arbitrary spot",
+  lat: 35.64954478173937,
+  lng: 139.738761419065,
+  label: "An arbitrary spot"
+)
+
+spot10 = Spot.create!(
+  address: "Keio University - Mita Campus, 45, Minato, 108",
+  lat: 35.64908736490124,
+  lng: 139.74230193496467,
+  label: "An arbitrary spot"
 )
 
 puts "Done creating spots..."
+puts "----------"
 puts "Creating users..."
-hayato = User.create!(
+user1 = User.create!(
   email: "hayato@email.com",
   password: "111111",
-  name: "Hayato the Savage",
+  name: "Lord Hayato",
   line_id: "tacomarutaco",
-  address: "2-chōme-5-8 Meguro, Meguro City, Tokyo 153-0063",
-  spot_id: spot2.id,
-  lng: 35.63388057,
-  lat: 139.7084001,
+  address: "1-chōme-21-6 Minamiazabu, Minato City, Tokyo 106-0047",
+  spot_id: spot1.id,
+  lat: 35.65114768368308,
+  lng: 139.73340638949398,
   evening_alert: "21:00",
   morning_alert: "12:30"
 )
-User.create!(
+
+user2 = User.create!(
   email: "rei@email.com",
   password: "222222",
-  name: "Rei Sugarfoot",
+  name: "Sugar Rei",
   line_id: "maxmaxreirei",
-  address: "2-chōme-5-7 Meguro, Meguro City, Tokyo 153-0063",
-  spot_id: spot3.id,
-  lng: 35.63421049,
-  lat: 139.7082023,
+  address: "2-chōme-9-17 Minamiazabu, Minato City, Tokyo 106-0047",
+  spot_id: spot2.id,
+  lat: 35.648650,
+  lng: 139.734500,
   evening_alert: "",
   morning_alert: "12:20"
 )
-User.create!(
+user3 = User.create!(
   email: "jun@email.com",
   password: "333333",
-  name: "Jun the Typhoon",
+  name: "Count Jun",
   line_id: "yoon_jjang",
-  address: "2-chōme-7-17 Meguro, Meguro City, Tokyo 153-0063",
-  lng: 35.63399291,
-  lat: 139.7084638,
+  address: "2 Chome-19-26 Mita, Minato City, Tokyo 108-0073",
+  # the coordinates of the above address is below.
+  # However it will not be used because the app chould be able to update the information on its own.
+
+  # lat: 35.64887189170019,
+  # lng: 139.73847914508494,
+
   evening_alert: "",
-  morning_alert: ""
+  morning_alert: "",
+)
+puts "Done creating users..."
+puts "----------"
+puts "Creating pickup details (spot dates)..."
+spot1_rec = SpotDate.create!(
+  date: Date.parse("2024-05-30"),
+  collection_type: "recyclables",
+  spot_id: spot1.id,
+  scheduled_time: Time.parse("8:00")
+)
+spot1_combust = SpotDate.create!(
+  date: Date.parse("2024-05-31"),
+  collection_type: "combustible",
+  spot_id: spot1.id,
+  scheduled_time: Time.parse("12:30")
+)
+spot1_noncombust = SpotDate.create!(
+  date: Date.parse("2024-06-01"),
+  collection_type: "non-combustible",
+  spot_id: spot1.id,
+  scheduled_time: Time.parse("12:30")
 )
 
-
-
-thirty_rec = SpotDate.create!(
+spot2_rec = SpotDate.create!(
   date: Date.parse("2024-05-30"),
   collection_type: "recyclables",
   spot_id: spot2.id,
-  schedule_time: "14:30"
+  scheduled_time: Time.parse("13:00")
 )
-thirtyone_rec = SpotDate.create!(
+spot2_combust = SpotDate.create!(
   date: Date.parse("2024-05-31"),
   collection_type: "combustible",
   spot_id: spot2.id,
-  schedule_time: "12:30"
+  scheduled_time: Time.parse("15:30")
 )
-first_rec = SpotDate.create!(
+spot2_noncombust = SpotDate.create!(
   date: Date.parse("2024-06-01"),
   collection_type: "non-combustible",
   spot_id: spot2.id,
-  schedule_time: "12:30"
+  scheduled_time: Time.parse("15:30")
 )
-
-SpotDate.create!(
-  date: Date.parse("2024-05-30"),
-  collection_type: "recyclables",
-  spot_id: spot3.id,
-  schedule_time: "14:30"
-)
-SpotDate.create!(
-  date: Date.parse("2024-05-31"),
-  collection_type: "combustible",
-  spot_id: spot3.id,
-  schedule_time: "12:30"
-)
-SpotDate.create!(
-  date: Date.parse("2024-06-01"),
-  collection_type: "non-combustible",
-  spot_id: spot3.id,
-  schedule_time: "12:30"
-)
-
+puts "Done creating pickup details (spot dates)..."
+puts "----------"
+puts "Creating alerts..."
 
 Alert.create!(
-  message: "Hi #{hayato.name}: Recyclables will be picked up tomorrow at #{thirty_rec.schedule_time}",
-  spot_date: thirty_rec,
-  user: hayato
+  message: "#{user1.name}, RECYCLABLES will be picked up tomorrow at #{spot1_rec.scheduled_time}",
+  spot_date: spot1_rec,
+  user: user1
 )
 Alert.create!(
-  message: "Hi #{hayato.name}: Recyclables will be picked soon at #{thirtyone_rec.schedule_time}",
-  spot_date: thirtyone_rec,
-  user: hayato
+  message: "#{user1.name}: RECYCLABLES is scheduled to be picked soon at #{spot1_rec.scheduled_time}",
+  spot_date: spot1_rec,
+  user: user1
 )
 Alert.create!(
-  message: "Hi #{hayato.name}: The estimated time of arrivals for recyclables is  #{first_rec.schedule_time}",
-  spot_date: first_rec,
-  user: hayato
+  message: "#{user1.name}: The estimated time of arrivals for RECYCLABLES is  #{spot1_rec.scheduled_time}",
+  spot_date: spot1_rec,
+  user: user1
 )
-
-puts "Seeding completed."
+puts "Done creating alerts..."
+puts "=========="
+puts "Seeding completed with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, and #{Alert.count} alerts."
