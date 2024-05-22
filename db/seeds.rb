@@ -193,4 +193,6 @@ Alert.create!(
 )
 puts "Done creating alerts..."
 puts "=========="
-puts "Seeding completed with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, and #{Alert.count} alerts."
+puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, and #{Alert.count} alerts."
+
+# This is junk comment to differentiate the file from a previous push
