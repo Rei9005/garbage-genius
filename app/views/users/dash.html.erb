@@ -93,7 +93,14 @@
 
   <!-- Calendar -->
   <div class="calendar">
-    <!-- Calendar goes here -->
+    <%= month_calendar(events: @spot_deets, attribute: :date) do |date, spot_deets| %>
+      <%= date %>
+      <% spot_deets.each do |spot_deet| %>
+        <div class="spot_deet">
+          <p><%= spot_deet.collection_type %></p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <!-- Alert Settings -->
