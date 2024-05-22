@@ -135,38 +135,38 @@ user3 = User.create!(
 puts "Done creating users..."
 puts "----------"
 puts "Creating pickup details (spot dates)..."
-spot1_rec = SpotDate.create!(
+@spot1_rec = SpotDate.create!(
   date: Date.parse("2024-05-30"),
   collection_type: "recyclables",
   spot_id: spot1.id,
   scheduled_time: Time.parse("8:00")
 )
-spot1_combust = SpotDate.create!(
+@spot1_combust = SpotDate.create!(
   date: Date.parse("2024-05-31"),
   collection_type: "combustible",
   spot_id: spot1.id,
   scheduled_time: Time.parse("12:30")
 )
-spot1_noncombust = SpotDate.create!(
+@spot1_noncombust = SpotDate.create!(
   date: Date.parse("2024-06-01"),
   collection_type: "non-combustible",
   spot_id: spot1.id,
   scheduled_time: Time.parse("12:30")
 )
 
-spot2_rec = SpotDate.create!(
+@spot2_rec = SpotDate.create!(
   date: Date.parse("2024-05-30"),
   collection_type: "recyclables",
   spot_id: spot2.id,
   scheduled_time: Time.parse("13:00")
 )
-spot2_combust = SpotDate.create!(
+@spot2_combust = SpotDate.create!(
   date: Date.parse("2024-05-31"),
   collection_type: "combustible",
   spot_id: spot2.id,
   scheduled_time: Time.parse("15:30")
 )
-spot2_noncombust = SpotDate.create!(
+@spot2_noncombust = SpotDate.create!(
   date: Date.parse("2024-06-01"),
   collection_type: "non-combustible",
   spot_id: spot2.id,
@@ -193,4 +193,6 @@ Alert.create!(
 )
 puts "Done creating alerts..."
 puts "=========="
-puts "Seeding completed with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, and #{Alert.count} alerts."
+puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, and #{Alert.count} alerts."
+
+# This is junk comment to differentiate the file from a previous push
