@@ -31,13 +31,16 @@
     <div data-controller="alert-preference"> 
       <label for="preferences">Alert_preference</label>
     <select id="preferences" name="preferences" data-action="change->alert-preference#toggle">
+       <option
+      value=""
+      ></option>
       <option
       value="yes"
       >Yes</option>
        <option
       value="no"
       >No</option></select>
-      <div data-alert-preference-target="inputs">
+      <div data-alert-preference-target="inputs" class="d-none">
     <%= f.input :morning_alert,
                 required: false,
                 input_html: { autocomplete: "morning_alert" } %>
