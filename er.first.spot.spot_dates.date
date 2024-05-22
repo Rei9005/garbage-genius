@@ -1,0 +1,28 @@
+=> 
+[[32m#<SpotDate:0x00007f7c083f1cc8[0m
+  id: [34m[1m1[0m,
+  date: Thu, 30 May 2024,
+  collection_type: [31m[1m"[0m[31mrecyclables[0m[31m[1m"[0m,
+  spot_id: [34m[1m1[0m,
+  created_at: Wed, 22 May 2024 01:57:40.089931000 UTC +00:00,
+  updated_at: Wed, 22 May 2024 01:57:40.089931000 UTC +00:00,
+  scheduled_time:
+   Sat, 01 Jan 2000 23:00:00.000000000 UTC +00:00[32m>[0m,
+ [32m#<SpotDate:0x00007f7c083f11d8[0m
+  id: [34m[1m2[0m,
+  date: Fri, 31 May 2024,
+  collection_type: [31m[1m"[0m[31mcombustible[0m[31m[1m"[0m,
+  spot_id: [34m[1m1[0m,
+  created_at: Wed, 22 May 2024 01:57:40.099589000 UTC +00:00,
+  updated_at: Wed, 22 May 2024 01:57:40.099589000 UTC +00:00,
+  scheduled_time:
+   Sat, 01 Jan 2000 03:30:00.000000000 UTC +00:00[32m>[0m,
+ [32m#<SpotDate:0x00007f7c083f04b8[0m
+  id: [34m[1m3[0m,
+  date: Sat, 01 Jun 2024,
+  collection_type: [31m[1m"[0m[31mnon-combustible[0m[31m[1m"[0m,
+  spot_id: [34m[1m1[0m,
+  created_at: Wed, 22 May 2024 01:57:40.111510000 UTC +00:00,
+  updated_at: Wed, 22 May 2024 01:57:40.111510000 UTC +00:00,
+  scheduled_time:
+   Sat, 01 Jan 2000 03:30:00.000000000 UTC +00:00[32m>[0m]
