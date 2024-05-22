@@ -5,7 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+Dotenv::Rails.load if defined?(Dotenv::Railtie)
 module GarbageGenuis
   class Application < Rails::Application
     config.action_controller.raise_on_missing_callback_actions = false if Rails.version >= "7.1.0"

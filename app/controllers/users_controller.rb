@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-
+class UsersController < ApplicationControlle
   before_action :authenticate_user!
 
   def edit
