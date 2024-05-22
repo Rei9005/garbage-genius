@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garbage Genius Dashboard</title>
-  <%# <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Genius Dashboard</title>
+    <%# <style>
     /* CSS styles go here */
     body {
       font-family: Arial, sans-serif;
@@ -73,52 +73,43 @@
       color: white;
     }
   </style> %>
-</head>
-<body>
-  <!-- Banner -->
-  <div class="banner">
-    <h1>Garbage Genius</h1>
-    <div class="button-group">
-      <button>Garbage Truck Map</button>
-      <button>ETA Analysis</button>
+  </head>
+  <body>
+    <!-- Banner -->
+    <div class="banner">
+      <h1>Garbage Genius</h1>
+      <div class="button-group">
+        <button>Garbage Truck Map</button>
+        <button>ETA Analysis</button>
+        <button>Change Settings</button>
+      </div>
+    </div>
+    <!-- Bar Banner -->
+    <div class="bar-banner">
+      <p>Next Garbage Date/Time/Type: <!-- Form goes here --></p>
+      <p>What time did the truck arrive today? <!-- Dropdown goes here --></p>
+    </div>
+    <!-- Calendar -->
+    <div class="calendar">
+      <%= month_calendar do |date| %>
+        <%= date %>
+      <% end %>
+    </div>
+    <!-- Alert Settings -->
+    <div class="alert-settings">
+      <h2>Current Alert Settings</h2>
+      <div class="alert-item">
+        <p>Alert 1: Day Before Pickup</p>
+        <p><!-- Time goes here --></p>
+      </div>
+      <div class="alert-item">
+        <p>Alert 2: Day of Pickup</p>
+        <p><!-- Time goes here --></p>
+      </div>
+    </div>
+    <!-- Change Settings Button -->
+    <div class="change-settings-btn">
       <button>Change Settings</button>
     </div>
-  </div>
-
-  <!-- Bar Banner -->
-  <div class="bar-banner">
-    <p>Next Garbage Date/Time/Type: <!-- Form goes here --></p>
-    <p>What time did the truck arrive today? <!-- Dropdown goes here --></p>
-  </div>
-
-  <!-- Calendar -->
-  <div class="calendar">
-    <%= month_calendar(events: @spot_deets, attribute: :date) do |date, spot_deets| %>
-      <%= date %>
-      <% spot_deets.each do |spot_deet| %>
-        <div class="spot_deet">
-          <p><%= spot_deet.collection_type %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <!-- Alert Settings -->
-  <div class="alert-settings">
-    <h2>Current Alert Settings</h2>
-    <div class="alert-item">
-      <p>Alert 1: Day Before Pickup</p>
-      <p><!-- Time goes here --></p>
-    </div>
-    <div class="alert-item">
-      <p>Alert 2: Day of Pickup</p>
-      <p><!-- Time goes here --></p>
-    </div>
-  </div>
-
-  <!-- Change Settings Button -->
-  <div class="change-settings-btn">
-    <button>Change Settings</button>
-  </div>
-</body>
+  </body>
 </html>
