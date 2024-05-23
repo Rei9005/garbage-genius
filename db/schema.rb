@@ -65,8 +65,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_051249) do
     t.string "line_id"
     t.string "address"
     t.bigint "spot_id"
-    t.float "lng"
-    t.float "lat"
+    t.float "longitude"
+    t.float "latitude"
     t.time "evening_alert"
     t.time "morning_alert"
     t.index ["email"], name: "index_users_on_email", unique: true
