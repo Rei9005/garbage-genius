@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dash', to: 'users#dash', as: 'dash'
   resources :users, only: [:edit, :update]
+  patch  "settings", to: "users#settings", as: :settings
+
 
   resources :spots, only: [:index, :show] do
     resources :users, only: [:update]

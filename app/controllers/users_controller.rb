@@ -6,7 +6,7 @@ class UsersController < ApplicationController
    end
 
 
-   def update
+   def settings
      if current_user.update(user_params)
        redirect_to dash_path, notice: 'Profile was successfully updated.'
      else
@@ -14,19 +14,7 @@ class UsersController < ApplicationController
      end
    end
 
-   private
-
-   def set_user
-     @user = current_user
-   end
-
-   def user_params
-     params.require(:user).permit(:email, :name, :address, :morning_alert, :evening_alert)
-   end
- end
-
-
-
+  
   def dash
 
     # This is needed for the calendar function
@@ -43,4 +31,16 @@ class UsersController < ApplicationController
     else
       render 'spots', status: :uprocessable_entity
     end
+  end
+
+    private
+
+   def set_user
+     @user = current_user
+   end
+
+   def user_params
+     params.require(:user).permit(:email, :name, :address, :morning_alert, :evening_alert)
+   end
+
 end
