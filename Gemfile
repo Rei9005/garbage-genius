@@ -52,6 +52,10 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "simple_calendar", "~> 2.4"
 
+# This gem is used to build a schedule calendar.  See https://www.rubydoc.info/gems/date_interval
+gem "date_interval"
+
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

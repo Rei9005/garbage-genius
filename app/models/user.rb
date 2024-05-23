@@ -3,9 +3,7 @@ class User < ApplicationRecord
   has_many :alerts, dependent: :destroy
   has_many :spot_visits, dependent: :destroy
 
-  # user name and password is handled by Devise
-  # validates :name, presence: true
-  # validates :address, presence: true
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
