@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'date_interval'
+
 puts "=========="
 puts "Cleaning the DB..."
 
@@ -111,7 +113,6 @@ user2 = User.create!(
   name: "Sugar Rei",
   line_id: "maxmaxreirei",
   address: "2-chōme-9-17 Minamiazabu, Minato City, Tokyo 106-0047",
-  spot_id: spot2.id,
   lat: 35.648650,
   lng: 139.734500,
   evening_alert: "",

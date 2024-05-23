@@ -96,25 +96,39 @@
         <% spot_deets.each do |spot_deet| %>
           <div class="spot_deet">
             <p><%= spot_deet.collection_type %></p>
-          </div>
+            <i class="fa-solid fa-bottle-water"></i>
+            <i class="fa-solid fa-bottle-water fa-beat"></i>
+            <i class="fa-solid fa-bottle-water fa-beat-fade"></i>
+            <i class="fa-solid fa-bottle-water fa-bounce"></i>
+            <i class="fa-solid fa-bottle-water fa-fade"></i>
+            <i class="fa-solid fa-bottle-water fa-flip"></i>
+            <i class="fa-solid fa-bottle-water fa-shake"></i>
+            <i class="fa-solid fa-bottle-water fa-spin"></i>
+            <i class="fa-solid fa-bottle-water fa-spin fa-spin-reverse"></i>
+            <i class="fa-solid fa-bottle-water fa-spin-pulse"></i>
+            <i class="fa-solid fa-fire"></i>
+            <i class="fa-solid fa-fire fa-beat"></i>
+            <i class="fa-solid fa-fire fa-beat-fade"></i>
+            <i class="fa-solid fa-fire fa-bounce"></i>
+            <i class="fa-solid fa-fire fa-fade"></i>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <!-- Alert Settings -->
-    <div class="alert-settings">
-      <h2>Current Alert Settings</h2>
-      <div class="alert-item">
-        <p>Alert 1: Day Before Pickup</p>
-        <p><!-- Time goes here --></p>
       </div>
-      <div class="alert-item">
-        <p>Alert 2: Day of Pickup</p>
-        <p><!-- Time goes here --></p>
+      <!-- Alert Settings -->
+      <div class="alert-settings">
+        <h2>Current Alert Settings</h2>
+        <div class="alert-item">
+          <p>Alert 1: Day Before Pickup</p>
+          <p><!-- Time goes here --></p>
+        </div>
+        <div class="alert-item">
+          <p>Alert 2: Day of Pickup</p>
+          <p><!-- Time goes here --></p>
+        </div>
       </div>
-    </div>
-    <!-- Change Settings Button -->
-    <div class="change-settings-btn">
-      <button>Change Settings</button>
-    </div>
-  </body>
-</html>
+      <!-- Change Settings Button -->
+      <div class="change-settings-btn">
+        <button>Change Settings</button>
+      </div>
+    </body>
+  </html>
