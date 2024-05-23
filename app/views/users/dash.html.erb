@@ -4,75 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garbage Genius Dashboard</title>
-    <%# <style>
-    /* CSS styles go here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .banner {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-    .button-group {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .button-group button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background-color: #009688;
-      color: white;
-    }
-    .bar-banner {
-      background-color: #f9f9f9;
-      padding: 10px;
-    }
-    .bar-banner p {
-      margin: 0;
-    }
-    .form-container {
-      display: flex;
-      align-items: center;
-    }
-    .calendar {
-      /* Calendar styles go here */
-      /* You can use any existing calendar library or custom design */
-    }
-    .alert-settings {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    .alert-settings h2 {
-      margin-top: 0;
-    }
-    .alert-item {
-      display: flex;
-      justify-content: space-between;
-    }
-    .change-settings-btn {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .change-settings-btn button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background-color: #009688;
-      color: white;
-    }
-  </style> %>
   </head>
   <body>
     <!-- Banner -->
@@ -81,7 +12,10 @@
       <div class="button-group">
         <button>Garbage Truck Map</button>
         <button>ETA Analysis</button>
-        <button>Change Settings</button>
+        <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
+      <div class="button-group">
+</div>
+
       </div>
     </div>
     <!-- Bar Banner -->
@@ -128,7 +62,7 @@
       </div>
       <!-- Change Settings Button -->
       <div class="change-settings-btn">
-        <button>Change Settings</button>
+       <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
       </div>
       <%=  @user_spot_id %>
     </body>
