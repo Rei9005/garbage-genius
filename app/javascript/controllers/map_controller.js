@@ -16,7 +16,6 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-
   }
 
 
@@ -24,17 +23,20 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      const spotMarker = document.createElement("div")
+      spotMarker.innerHTML = marker.marker_html
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(spotMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
     })
+
     this.userValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window2_html)
 
       const customMarker = document.createElement("div")
-    customMarker.innerHTML = marker.marker_html
+      customMarker.innerHTML = marker.marker_html
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
@@ -63,7 +65,6 @@ export default class extends Controller {
         return response.json();
       })
       .then(data => {
-        // 更新が成功したらダッシュボードにリダイレクト
         window.location.replace(data.redirect_url);
       })
       .catch(error => console.error('Error:', error));
