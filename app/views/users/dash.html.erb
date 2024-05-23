@@ -81,7 +81,9 @@
       <div class="button-group">
         <button>Garbage Truck Map</button>
         <button>ETA Analysis</button>
-        <button>Change Settings</button>
+        <%= link_to edit_user_path(current_user) do %>
+        <button>Change Setting</button>
+        <% end %>
       </div>
     </div>
     <!-- Bar Banner -->
