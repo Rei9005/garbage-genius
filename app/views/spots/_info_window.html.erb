@@ -1,0 +1,6 @@
+<div>
+  <h3><%= spot.label %></h3>
+  <%= simple_form_for([spot, current_user]) do |f| %>
+    <%= f.submit "Set Spot", class: 'set-spot-button' %>
+  <% end %>
+</div>
