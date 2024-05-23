@@ -111,7 +111,6 @@ user2 = User.create!(
   name: "Sugar Rei",
   line_id: "maxmaxreirei",
   address: "2-chōme-9-17 Minamiazabu, Minato City, Tokyo 106-0047",
-  spot_id: spot2.id,
   latitude: 35.648650,
   longitude: 139.734500,
   evening_alert: "",
@@ -177,18 +176,18 @@ puts "----------"
 puts "Creating alerts..."
 
 Alert.create!(
-  message: "#{user1.name}, RECYCLABLES will be picked up tomorrow at #{spot1_rec.scheduled_time}",
-  spot_date: spot1_rec,
+  message: "#{user1.name}, RECYCLABLES will be picked up tomorrow at #{@spot1_rec.scheduled_time}",
+  spot_date: @spot1_rec,
   user: user1
 )
 Alert.create!(
-  message: "#{user1.name}: RECYCLABLES is scheduled to be picked soon at #{spot1_rec.scheduled_time}",
-  spot_date: spot1_rec,
+  message: "#{user1.name}: RECYCLABLES is scheduled to be picked soon at #{@spot1_rec.scheduled_time}",
+  spot_date: @spot1_rec,
   user: user1
 )
 Alert.create!(
-  message: "#{user1.name}: The estimated time of arrivals for RECYCLABLES is  #{spot1_rec.scheduled_time}",
-  spot_date: spot1_rec,
+  message: "#{user1.name}: The estimated time of arrivals for RECYCLABLES is  #{@spot1_rec.scheduled_time}",
+  spot_date: @spot1_rec,
   user: user1
 )
 puts "Done creating alerts..."
