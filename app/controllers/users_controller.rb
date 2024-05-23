@@ -24,19 +24,17 @@ class UsersController < ApplicationController
   # def user_params
   #   params.require(:user).permit(:email, :password, :password_confirmation, :name, :address, :morning_alert, :evening_alert)
   # end
-end
+# end
 
-  def dash
-    @user_spot_id = current_user.spot_id
-  end
 
 
   def dash
 
     # This is needed for the calendar function
     @spot_deets = current_user.spot.spot_dates
+    @user_spot_id = current_user.spot_id
 
-
+  end
 
   def update
     @user = User.find(params[:id])
@@ -51,4 +49,3 @@ end
 
 
 end
-
