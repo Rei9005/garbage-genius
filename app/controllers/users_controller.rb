@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:edit, :update]
+  before_action :authenticate_user!
 
   def edit
      @user
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def dash
 
     # This is needed for the calendar function
-    @spot_deets = current_user.spot.spot_dates
+    @spot_details = current_user.spot.spot_dates
     @user_spot_id = current_user.spot_id
 
   end
