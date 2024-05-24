@@ -103,8 +103,8 @@ user1 = User.create!(
   # spot_id: spot1.id,
   latitude: 35.65114768368308,
   longitude: 139.73340638949398,
-  evening_alert: "21:00",
-  morning_alert: "12:30"
+  evening_alert_at: "",
+  morning_alert_at: ""
 )
 
 user2 = User.create!(
@@ -117,8 +117,8 @@ user2 = User.create!(
   latitude: 35.648650,
   longitude: 139.734500,
 
-  evening_alert: "",
-  morning_alert: "12:20"
+  evening_alert_at: "",
+  morning_alert_at: "12:20"
 )
 user3 = User.create!(
   email: "jun@email.com",
@@ -132,8 +132,8 @@ user3 = User.create!(
   # latitude: 35.64887189170019,
   # longtitude: 139.73847914508494,
 
-  evening_alert: "",
-  morning_alert: "",
+  evening_alert_at: "",
+  morning_alert_at: "",
 )
 puts "Done creating users..."
 puts "----------"
