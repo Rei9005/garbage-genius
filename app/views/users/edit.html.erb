@@ -1,19 +1,21 @@
 <div class="container">
-<h2>Edit Profile/Settings</h2>
-
-<%= simple_form_for(current_user, url: :settings) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :email,
+  <h2>Edit Profile/Settings</h2>
+  <%= simple_form_for(current_user, url: :settings) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :name,
+      <%= f.input :name,
                 required: true,
                 input_html: { autocomplete: "name" } %>
-    <%= f.input :address,
+      <%= f.input :address,
                 required: true,
                 input_html: { autocomplete: "Address" } %>
+
+
+
     <label for="preferences">Choose an alert preference</label>
     <div data-controller="alert-preference"> 
       <%= f.input :evening_alert,  label: "remind me the day before", input_html: {value: current_user.evening_alert, "data-action": "change->alert-preference#toggle"} %>
@@ -43,12 +45,19 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Save" %>
+
     </div>
-
-  <div class="Privacy-policy">
-    <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
-    <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p></strong>
-<% end %>
-
+    <div class="form-actions">
+      <%= f.button :submit, "Cancel" %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Save" %>
+    </div>
+    <div class="Privacy-policy">
+      <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
+      <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p>
+      </strong>
+    <% end %>
+  </div>
 </div>
-</div>
+console

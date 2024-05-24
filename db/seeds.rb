@@ -100,7 +100,7 @@ user1 = User.create!(
   name: "Lord Hayato",
   line_id: "tacomarutaco",
   address: "1-chōme-21-6 Minamiazabu, Minato City, Tokyo 106-0047",
-  spot_id: spot1.id,
+  # spot_id: spot1.id,
   latitude: 35.65114768368308,
   longitude: 139.73340638949398,
   evening_alert: "21:00",
