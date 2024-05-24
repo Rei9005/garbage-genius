@@ -14,7 +14,7 @@ class UsersController < ApplicationController
      end
    end
 
-  
+
   def dash
 
     # This is needed for the calendar function
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
    end
 
    def user_params
-     params.require(:user).permit(:email, :name, :address, :alert_1, :alert_2)
+     params.require(:user).permit(:email, :name, :address, :evening_alert, :evening_alert_at, :morning_alert, :morning_alert_at )
    end
 
 end
