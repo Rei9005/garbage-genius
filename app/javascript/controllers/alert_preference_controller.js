@@ -9,7 +9,7 @@ export default class extends Controller {
 
   toggle(e) {
     console.log(e.currentTarget.value)
-    if(e.currentTarget.value === "yes") {
+    if(e.currentTarget.checked) {
       this.inputsTarget.classList.remove("d-none")
     } else {
       this.inputsTarget.classList.add("d-none")
