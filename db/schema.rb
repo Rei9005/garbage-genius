@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_22_051249) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_24_025240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,8 +67,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_051249) do
     t.bigint "spot_id"
     t.float "longitude"
     t.float "latitude"
-    t.time "evening_alert"
-    t.time "morning_alert"
+    t.time "evening_alert_at"
+    t.time "morning_alert_at"
+    t.boolean "evening_alert"
+    t.boolean "morning_alert"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["spot_id"], name: "index_users_on_spot_id"
