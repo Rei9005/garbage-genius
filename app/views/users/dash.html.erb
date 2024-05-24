@@ -7,9 +7,9 @@
   </head>
   <body>
     <!-- Banner -->
-    config.beginning_of_week = :sunday
+    <%# config.beginning_of_week = :sunday %>
     <div class="banner">
-      <h1>Garbage Genius</h1>
+      <%# <h1>Garbage Genius</h1> %>
       <div class="button-group">
         <button>Garbage Truck Map</button>
         <button>ETA Analysis</button>
@@ -62,11 +62,11 @@
           <h2>Current Alert Settings</h2>
           <div class="alert-item">
             <p>Alert 1: Day Before Pickup</p>
-            <p><!-- Time goes here --></p>
+            <p> <%= current_user.evening_alert_at.strftime("%I:%M %p") %></p>
           </div>
           <div class="alert-item">
             <p>Alert 2: Day of Pickup</p>
-            <p><!-- Time goes here --></p>
+            <p> <%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
           </div>
         </div>
         <!-- Change Settings Button -->
