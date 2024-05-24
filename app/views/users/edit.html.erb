@@ -14,23 +14,25 @@
     <%= f.input :address,
                 required: true,
                 input_html: { autocomplete: "Address" } %>
+    <label for="preferences">Choose an alert preference</label>
     <div data-controller="alert-preference"> 
-      <label for="preferences">Alert_preference</label>
-    <select id="preferences" name="preferences" data-action="change->alert-preference#toggle">
-      <option
-      value="yes"
-      >Yes</option>
-       <option
-      value="no"
-      >No</option></select>
-      <div data-alert-preference-target="inputs">
-    <%= f.input :morning_alert,
+      <%= f.input :evening_alert,  label: "remind me the day before", input_html: {value: current_user.evening_alert, "data-action": "change->alert-preference#toggle"} %>
+            <div data-alert-preference-target="inputs" class="<%='d-none' unless current_user.evening_alert %>">
+    <%= f.input :evening_alert_at,
                 required: false,
-                input_html: { autocomplete: "morning_alert" } %>
-     <%= f.input :evening_alert,
+                label: "at [HH:MM]",
+                input_html: { autocomplete: "alert_1" } %>
+                </div>
+                </div>
+ <div data-controller="alert-preference"> 
+      <%= f.input :morning_alert, label: "remind me on the day of collection", input_html: {value: current_user.morning_alert, "data-action": "change->alert-preference#toggle"} %>
+            <div data-alert-preference-target="inputs" class="<%='d-none' unless current_user.morning_alert %>">
+    <%= f.input :morning_alert_at,
                 required: false,
-                input_html: { autocomplete: "evening_alert" } %>
-  </div>
+                label: "at [HH:MM]",
+                input_html: { autocomplete: "alert_1" } %>
+                </div>
+                </div>
 
   </div>
   </div>
