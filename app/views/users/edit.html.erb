@@ -1,52 +1,48 @@
 <div class="container">
-<h2>Edit Profile/Settings</h2>
-
-<%= simple_form_for(current_user, url: :settings) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :email,
+  <h2>Edit Profile/Settings</h2>
+  <%= simple_form_for(current_user, url: :settings) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :name,
+      <%= f.input :name,
                 required: true,
                 input_html: { autocomplete: "name" } %>
-    <%= f.input :address,
+      <%= f.input :address,
                 required: true,
                 input_html: { autocomplete: "Address" } %>
-    <div data-controller="alert-preference"> 
-      <label for="preferences">Alert_preference</label>
-    <select id="preferences" name="preferences" data-action="change->alert-preference#toggle">
-      <option
+      <div data-controller="alert-preference">
+        <label for="preferences">Alert_preference</label>
+        <select id="preferences" name="preferences" data-action="change->alert-preference#toggle">
+          <option
       value="yes"
       >Yes</option>
-       <option
+          <option
       value="no"
       >No</option></select>
-      <div data-alert-preference-target="inputs">
-    <%= f.input :morning_alert,
+        <div data-alert-preference-target="inputs">
+          <%= f.input :morning_alert,
                 required: false,
                 input_html: { autocomplete: "morning_alert" } %>
-     <%= f.input :evening_alert,
+          <%= f.input :evening_alert,
                 required: false,
                 input_html: { autocomplete: "evening_alert" } %>
-  </div>
-
-  </div>
-  </div>
-
-  <div class="form-actions">
-   <%= f.button :submit, "Cancel" %>
-   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Save" %>
+        </div>
+      </div>
     </div>
-
-  <div class="Privacy-policy">
-    <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
-    <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p></strong>
-<% end %>
-
+    <div class="form-actions">
+      <%= f.button :submit, "Cancel" %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Save" %>
+    </div>
+    <div class="Privacy-policy">
+      <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
+      <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p>
+      </strong>
+    <% end %>
+  </div>
 </div>
-</div>
+console

@@ -14,78 +14,65 @@
         <button>Garbage Truck Map</button>
         <button>ETA Analysis</button>
         <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
-      <div class="button-group">
+        <div class="button-group">
+        </div>
       </div>
-    </div>
-    <!-- Bar Banner -->
-    <div class="bar-banner">
-      <p>Next Garbage Date/Time/Type: <!-- Form goes here --></p>
-      <p>What time did the truck arrive today? <!-- Dropdown goes here --></p>
-    </div>
-    <!-- Calendar -->
-    <div class="calendar">
-      <%= month_calendar(events: @spot_details, attribute: :date) do |date, spot_details| %>
-        <%= date.strftime("%b %-d")  %>
-        <p></p>
-        <% if date == Date.today  %>
-          <h2>Today</h2>
-        <% end  %>
-        <% spot_details.each do |spot_detail| %>
-          <div class="spot_detail">
-            <% if spot_detail.collection_type == "C" %>
-              <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
-              <p><%= 'Combustible' %></p>
-              <i class="fa-solid fa-dumpster-fire <%= date == Date.today ? "fa-beat" : ""%> fa-2xl"></i>
-              <i class="fa-solid fa-fire fa-beat fa-2xl"></i>
-              <i class="fa-solid fa-toilet-paper fa-beat fa-2xl"></i>
-              <p></p>
-              <i class="fa-solid fa-fire fa-xl"></i>
-              <i class="fa-solid fa-toilet-paper fa-xl"></i>
-              <i class="fa-solid fa-dumpster-fire fa-xl"></i>
-            <% elsif spot_detail.collection_type == "GCM"%>
-              <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
-              <p><%= 'Glass, Ceramic and Metallic' %></p>
-              <i class="fa-solid fa-kitchen-set fa-beat fa-2xl"></i>
-              <i class="fa-solid fa-house-chimney fa-beat fa-2xl"></i>
-              <p></p>
-              <i class="fa-solid fa-kitchen-set fa-xl"></i>
-              <i class="fa-solid fa-house-chimney fa-xl"></i>
-            <% elsif spot_detail.collection_type == "RP"%>
-              <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
-              <p><%= 'Recyclable plastics' %></p>
-              <i class="fa-solid fa-recycle fa-beat fa-2xl"></i>
-              <p></p>
-              <i class="fa-solid fa-recycle fa-xl"></i>
-            <% elsif spot_detail.collection_type == "UPBBC"%>
-              <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
-              <p><%= 'Used paper, Plastic bottles, Bottles, Cans' %></p>
-              <i class="fa-solid fa-boxes-packing fa-beat fa-2xl"></i>
-              <i class="fa-solid fa-bottle-water fa-beat fa-2xl"></i>
-              <i class="fa-solid fa-wine-bottle fa-beat fa-2xl"></i>
-              <p></p>
-              <i class="fa-solid fa-boxes-packing fa-xl"></i>
-              <i class="fa-solid fa-bottle-water fa-xl"></i>
-              <i class="fa-solid fa-wine-bottle fa-xl"></i>
+      <!-- Bar Banner -->
+      <div class="bar-banner">
+        <p>Next Garbage Date/Time/Type: <!-- Form goes here --></p>
+        <p>What time did the truck arrive today? <!-- Dropdown goes here --></p>
+      </div>
+      <!-- Calendar -->
+      <div class="calendar">
+        <%= month_calendar(events: @spot_details, attribute: :date) do |date, spot_details| %>
+          <%= date.strftime("%b %-d")  %>
+          <p></p>
+          <% if date == Date.today  %>
+            <h2>Today</h2>
+          <% end  %>
+          <% spot_details.each do |spot_detail| %>
+            <div class="spot_detail">
+              <% if spot_detail.collection_type == "C" %>
+                <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+                <p><%= 'Combustible' %></p>
+                <i class="fa-solid fa-fire <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today +1) ? "fa-beat " : ""%>fa-2xl"></i>
+              <% elsif spot_detail.collection_type == "GCM"%>
+                <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+                <p><%= 'Glass, Ceramic and Metallic' %></p>
+                <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+                <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+                <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+                <p></p>
+              <% elsif spot_detail.collection_type == "RP"%>
+                <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+                <p><%= 'Recyclable plastics' %></p>
+                <i class="fa-solid fa-recycle fa-2xl"></i>
+              <% elsif spot_detail.collection_type == "UPBBC"%>
+                <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+                <p><%= 'Used paper, Plastic bottles, Bottles, Cans' %></p>
+                <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+                <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+                <i class="fa-solid fa-wine-bottle <%= date == Date.today ? "fa-bounce " : ""%>fa-2xl"></i>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
-      <!-- Alert Settings -->
-      <div class="alert-settings">
-        <h2>Current Alert Settings</h2>
-        <div class="alert-item">
-          <p>Alert 1: Day Before Pickup</p>
-          <p><!-- Time goes here --></p>
         </div>
-        <div class="alert-item">
-          <p>Alert 2: Day of Pickup</p>
-          <p><!-- Time goes here --></p>
+        <!-- Alert Settings -->
+        <div class="alert-settings">
+          <h2>Current Alert Settings</h2>
+          <div class="alert-item">
+            <p>Alert 1: Day Before Pickup</p>
+            <p><!-- Time goes here --></p>
+          </div>
+          <div class="alert-item">
+            <p>Alert 2: Day of Pickup</p>
+            <p><!-- Time goes here --></p>
+          </div>
         </div>
-      </div>
-      <!-- Change Settings Button -->
-      <div class="change-settings-btn">
-       <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
-      </div>
-      <%=  @user_spot_id %>
-    </body>
-  </html>
+        <!-- Change Settings Button -->
+        <div class="change-settings-btn">
+          <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
+        </div>
+        <%=  @user_spot_id %>
+      </body>
+    </html>
