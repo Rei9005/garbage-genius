@@ -58,15 +58,15 @@
     <% if current_user.evening_alert != nil %>
       <p> <%= current_user.evening_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
   <div class="alert-item">
     <p>Alert 2: Day of Pickup</p>
     <% if current_user.morning_alert !=  nil %>
       <p> <%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <!-- Change Settings Button -->
 <div class="change-settings-btn">
