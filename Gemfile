@@ -82,3 +82,5 @@ group :test do
 end
 
 gem "geocoder"
+
+gem 'line-bot-api'

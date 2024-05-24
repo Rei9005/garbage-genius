@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :alerts, only: [:index]
+  post "/callback", to: 'pages#line'
 end
