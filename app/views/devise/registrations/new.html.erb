@@ -1,5 +1,6 @@
 <div class="container">
-  <h2>Sign up</h2>
+  <h2>Sign Up</h2>
+  <p>Please fill in this form to create an account.</p>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
@@ -11,7 +12,7 @@
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_Confirmation,
+      <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
       <%= f.input :name,
@@ -20,18 +21,18 @@
       <%= f.input :line_id,
                 required: true,
                 input_html: { autocomplete: "line_id" } %>
-      <%= f.input :address,
-                required: true,
-                input_html: { autocomplete: "Address" } %>
+        <%= f.input :address,
+        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none form-control"},
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+      %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn btn-ghost" %>
-    </div>
+
     <div class="Privacy-policy">
       <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
-      <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p>
-      </strong>
+      <p><strong>Copyright 2024 Garbage Genius.  All rights reserved </strong></p>
+      </div>
+    <div class="form-actions">
+      <%= f.submit "Sign up", class:"btn-signup"%>
+    </div>
     <% end %>
-    <%= render "devise/shared/links" %>
   </div>
-</div>
