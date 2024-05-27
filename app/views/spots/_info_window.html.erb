@@ -1,12 +1,13 @@
-<div>
-  <h3><%= spot.label %></h3>
-  <%= simple_form_for([spot, current_user]) do |f| %>
-    <%= f.submit "Set Spot", class: 'set-spot-button' %>
-  <% end %>
-</div>
-<div>
-  <h3>truck notification</h3>
-  <%= simple_form_for([spot, current_user]) do |f| %>
-    <%= f.submit "notification", class: 'set-spot-button' %>
-  <% end %>
-</div>
+<% if spot.id == current_user.spot_id  %>
+  <div>
+    <p class="your-location">Your drop-off spot</p>
+  </div>
+  <div>
+  <% else %>
+    <div>
+      <%= simple_form_for([spot, current_user]) do |f| %>
+        <%= f.submit "Set Spot", class: 'set-spot-button' %>
+      <% end %>
+    </div>
+    <div>
+    <% end %>

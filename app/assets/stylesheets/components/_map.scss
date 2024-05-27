@@ -3,6 +3,29 @@
 }
 
 .mapboxgl-popup-content {
+  display: inline-block;
+	color: black;
+	padding: 0;
+	text-decoration: none;
+	background: white;
+	border-radius: 0.6rem;
+	font-weight: 550;
+  border: solid 3px black;
+
+}
+
+.mapboxgl-popup-tip {
+border: none;
+}
+.map {
+  border-radius: 0.8rem;
+  border: 4px solid;
+}
+
+.your-location {
+
+  font-size: 20px;
+	padding: 10px 10px;
+margin: 0;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
 }

@@ -16,8 +16,8 @@ class LineMessageService
       type: 'text',
       text: message
     }
-    # @client.push_message('Ua47c20764ce6342f8d20e93fd650c577', message_block)
-    @client.push_message('U97a0874c1af2397e0591455c98d64f2c', message_block)
+    @client.push_message('Ua47c20764ce6342f8d20e93fd650c577', message_block)
+    # @client.push_message('U97a0874c1af2397e0591455c98d64f2c', message_block)
   end
 end
 
