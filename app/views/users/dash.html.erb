@@ -8,11 +8,36 @@
     <div class="button-group">
     </div>
   </div>
-  <!-- Bar Banner -->
-  <%# <div class="bar-banner">
-    <p>Next Garbage Date/Time/Type: <!-- Form goes here --></p>
-    <p>What time did the truck arrive today? <!-- Dropdown goes here --></p>
-  </div> %>
+
+  <%# Next Garbage Collection Banner %>
+  <% next_garbage_collection = @spot_details.find { |spot_detail| spot_detail.date >= Date.today } %>
+  <% if next_garbage_collection %>
+    <% day_before_next_collection = next_garbage_collection.date - 1.day %>
+    <div class="bar-banner">
+      <p>Next Garbage Date/Time/Type:
+        <%= day_before_next_collection.strftime("%B %-d, %Y") %> at
+        <%= next_garbage_collection.scheduled_time.strftime("%I:%M %p") %> -
+        <%= case next_garbage_collection.collection_type
+            when "C"
+              "Combustible"
+            when "GCM"
+              "Glass, Ceramic, and Metallic"
+            when "RP"
+              "Recyclable Plastics"
+            when "UPBBC"
+              "Used Paper, Plastic Bottles, Bottles, Cans"
+            else
+              "Unknown"
+            end %>
+      </p>
+    </div>
+  <% else %>
+    <div class="bar-banner">
+      <p>No upcoming garbage collection scheduled.</p>
+    </div>
+  <% end %>
+</div>
+
   <!-- Calendar -->
   <div class="calendar mt-3">
     <%= calendar(number_of_days: 3, events: @spot_details, attribute: :date) do |date, spot_details| %>
