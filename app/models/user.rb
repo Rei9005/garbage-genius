@@ -11,4 +11,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+
+  def send_alerts
+    send_morning_alert if Time.now.strftime("%H:%M") == morning_alert_at.strftime("%H:%M")
+    send_evening_alert if Time.now.strftime("%H:%M") == evening_alert_at.strftime("%H:%M")
+  end
+
+  private
+
+  def send_morning_alert
+    LineNotificationService.new(line_id).send("Good morning!")
+  end
+
+  def send_evening_alert
+    LineNotificationService.new(line_id).send("Good evening!")
+  end
 end

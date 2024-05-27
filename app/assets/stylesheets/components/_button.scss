@@ -11,3 +11,21 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
+
+.set-spot-button {
+  display: inline-block;
+	color: black;
+	padding: 10px 20px;
+	text-decoration: none;
+	background: rgb(103, 211, 241);
+	border-radius: 0.6rem;
+	font-weight: 550;
+	font-size: 20px;
+  border: solid 3px black;
+
+
+  &:hover{
+    color: white;
+  }
+}

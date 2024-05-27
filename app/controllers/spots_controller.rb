@@ -16,7 +16,6 @@ class SpotsController < ApplicationController
     @user_marker = [
       { lat: current_user.latitude,
         lng: current_user.longitude,
-        info_window2_html: render_to_string(partial: "info_window2", locals: { current_user: current_user}),
         marker_html: render_to_string(partial: "marker")
       }
       ]

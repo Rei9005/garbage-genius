@@ -26,19 +26,19 @@ spot1 = Spot.create!(
   address: "Hayato's drop-off location",
   latitude: 35.651166,
   longitude: 139.733786,
-  label: "Hayato's drop-off location"
+  label: "An arbitrary spot"
 )
 spot2 = Spot.create!(
   address: "Rei's drop-off location",
   latitude: 35.64866328715169,
   longitude: 139.734738025795,
-  label: "Rei's drop-off location"
+  label: "An arbitrary spot"
 )
 spot3 = Spot.create!(
   address: "Jun's closest drop-off location",
   latitude: 35.64870940673248,
   longitude: 139.73846075767176,
-  label: "Jun's closest drop-off location"
+  label: "An arbitrary spot"
 )
 
 # 7 additional arbitrary spots in Minato
@@ -117,7 +117,10 @@ user2 = User.create!(
   latitude: 35.648650,
   longitude: 139.734500,
 
-  evening_alert_at: "",
+  evening_alert: true,
+  morning_alert: true,
+
+  evening_alert_at: "16:31",
   morning_alert_at: "12:20"
 )
 user3 = User.create!(
