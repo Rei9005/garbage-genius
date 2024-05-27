@@ -53,24 +53,29 @@
 <!-- Alert Settings -->
 <div class="alert-settings">
   <h2>Current Alert Settings</h2>
+
   <div class="alert-item">
     <p>Alert 1: Day Before Pickup</p>
-    <% if current_user.evening_alert_at != nil %>
-      <p> <%= current_user.evening_alert_at.strftime("%I:%M %p") %></p>
+    <% if current_user.evening_alert_at.present? %>
+      <p><%= current_user.evening_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
+      <p>No evening alert set</p>
     <% end %>
   </div>
+
   <div class="alert-item">
     <p>Alert 2: Day of Pickup</p>
-    <% if current_user.morning_alert_at !=  nil %>
-      <p> <%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
+    <% if current_user.morning_alert_at.present? %>
+      <p><%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
+      <p>No morning alert set</p>
     <% end %>
   </div>
 </div>
+
 <!-- Change Settings Button -->
 <div class="change-settings-btn">
-  <button onclick="window.location.href='<%= edit_user_path(current_user) %>'">Change Settings</button>
+   <%= link_to "Change Settings", edit_user_path(current_user), class: "btn btn-ghost" %>
 </div>
 </body>
 </html>

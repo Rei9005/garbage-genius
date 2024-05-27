@@ -17,7 +17,7 @@
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <%= link_to "Home", dash_path, class: "nav-link" %>
+      <%= link_to "Home", dash_path, class: "nav-link", class: "btn btn-ghost" %>
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
@@ -29,7 +29,7 @@
           </li>
         <% else %>
           <li class="nav-item"-->
-            <%= link_to "Login", spots_path, class: "nav-link" %>
+            <%= link_to "Login", spots_path, class: "nav-link", class: "btn btn-ghost" %>
           </li>
         <% end %>
       </ul>
