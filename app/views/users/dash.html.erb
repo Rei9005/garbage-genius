@@ -15,7 +15,7 @@
   </div> %>
   <!-- Calendar -->
   <div class="calendar mt-3">
-    <%= month_calendar(events: @spot_details, attribute: :date) do |date, spot_details| %>
+    <%= calendar(number_of_days: 3, events: @spot_details, attribute: :date) do |date, spot_details| %>
       <%= date.strftime("%b %-d")  %>
       <p></p>
       <% if date == Date.today  %>
@@ -25,25 +25,33 @@
         <div class="spot_detail">
           <% if spot_detail.collection_type == "C" %>
             <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+            <p></p>
+            <i class="fa-solid fa-fire <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <p></p>
             <p><%= 'Combustible' %></p>
-            <i class="fa-solid fa-fire <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
           <% elsif spot_detail.collection_type == "GCM"%>
             <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+            <p></p>
+            <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
+            <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
+            <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <p></p>
             <p><%= 'Glass, Ceramic and Metallic' %></p>
-            <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
             <p></p>
           <% elsif spot_detail.collection_type == "RP"%>
             <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+            <p></p>
+            <i class="fa-solid fa-recycle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <p></p>
             <p><%= 'Recyclable plastics' %></p>
-            <i class="fa-solid fa-recycle fa-2xl"></i>
           <% elsif spot_detail.collection_type == "UPBBC"%>
             <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+            <p></p>
+            <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <i class="fa-solid fa-wine-bottle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <p></p>
             <p><%= 'Used paper, Plastic bottles, Bottles, Cans' %></p>
-            <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-wine-bottle <%= date == Date.today ? "fa-bounce " : ""%><%= date == (Date.today + 1) ? "fa-beat " : ""%>fa-2xl"></i>
           <% end %>
         <% end %>
       <% end %>
