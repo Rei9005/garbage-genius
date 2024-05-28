@@ -108,13 +108,10 @@
     <% if current_user.morning_alert_at.present? %>
       <p><%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
-      <p>No morning alert set</p>
+      <div class="bar-banner">
+        <p>No upcoming garbage collection scheduled.</p>
+      </div>
     <% end %>
   </div>
 </div>
-<!-- Change Settings Button -->
-<div class="change-settings-btn">
-  <%= link_to "Change Settings", edit_user_path(current_user), class: "btn btn-ghost" %>
-</div>
-</body>
-</html>
+
