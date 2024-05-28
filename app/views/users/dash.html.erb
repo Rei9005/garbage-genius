@@ -76,6 +76,13 @@
           <p></p>
           <p><%= 'Used paper, Plastic bottles, Bottles, Cans' %></p>
         <% end %>
+        <% if HelpRequest.find_by(asker: current_user , spot_date: spot_detail ) %>
+          Already made request
+        <% else %>
+          <%= simple_form_for([spot_detail, @help_request]) do |f| %>
+          <%= f.submit  "ask request"%>
+          <% end %>       
+        <% end %>
       <% end %>
     <% end %>
   </div>
