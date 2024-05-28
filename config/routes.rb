@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :spot_dates, only: [:create] do
     resources :spot_visits, only: [:create]
+    resources :help_requests, only: [:create, :update]
   end
 
   resources :alerts, only: [:index]

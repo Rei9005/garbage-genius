@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     # This is needed for the calendar function
     @spot_details = current_user.spot.spot_dates
     @user_spot_id = current_user.spot_id
-
+    @help_request = HelpRequest.new
   end
 
   def update
