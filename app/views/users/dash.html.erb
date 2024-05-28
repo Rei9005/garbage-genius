@@ -9,9 +9,9 @@
     </div>
   </div>
   <%# Next Garbage Collection Banner %>
-  <% next_garbage_collection = @spot_details.find { |spot_detail| spot_detail.date >= Date.today } %>
+  <% next_garbage_collection = @spot_details.find { |spot_detail| spot_detail.date >= (Date.today) + 1 } %>
   <% if next_garbage_collection %>
-    <% day_before_next_collection = next_garbage_collection.date - 1.day %>
+    <% day_before_next_collection = next_garbage_collection.date - 1 %>
     <div class="bar-banner">
       <p>Next Garbage Date/Time/Type:
         <%= day_before_next_collection.strftime("%B %-d, %Y") %> at
@@ -38,7 +38,7 @@
 </div>
 <!-- Calendar -->
 <div class="calendar mt-3">
-  <%= week_calendar(number_of_days: 14, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
+  <%= month_calendar(number_of_days: 14, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
     <%= date.strftime("%b %-d")  %>
     <p></p>
     <% if date == Date.today  %>
@@ -47,13 +47,15 @@
     <% spot_details.each do |spot_detail| %>
       <div class="spot_detail">
         <% if spot_detail.collection_type == "C" %>
-          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
+          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
           <p></p>
           <i class="fa-solid fa-fire <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
           <p></p>
           <p><%= 'Combustible' %></p>
         <% elsif spot_detail.collection_type == "GCM"%>
-          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
+          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
           <p></p>
           <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
           <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
@@ -62,13 +64,15 @@
           <p><%= 'Glass, Ceramic and Metallic' %></p>
           <p></p>
         <% elsif spot_detail.collection_type == "RP"%>
-          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
+          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
           <p></p>
           <i class="fa-solid fa-recycle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
           <p></p>
           <p><%= 'Recyclable plastics' %></p>
         <% elsif spot_detail.collection_type == "UPBBC"%>
-          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %></p>
+          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
+          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
           <p></p>
           <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
           <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
@@ -104,13 +108,10 @@
     <% if current_user.morning_alert_at.present? %>
       <p><%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
     <% else %>
-      <p>No morning alert set</p>
+      <div class="bar-banner">
+        <p>No upcoming garbage collection scheduled.</p>
+      </div>
     <% end %>
   </div>
 </div>
-<!-- Change Settings Button -->
-<div class="change-settings-btn">
-  <%= link_to "Change Settings", edit_user_path(current_user), class: "btn btn-ghost" %>
-</div>
-</body>
-</html>
+

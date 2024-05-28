@@ -1,8 +1,13 @@
-<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
-  <div style="width: 60%; height: 500px;" class=" map d-flex justify-content-center"
+<div class="spots">
+  <div class="spots-title">
+    <h1>Set your drop-off spot</h1>
+  </div>
+  <div class="container-fluid d-flex justify-content-center align-items-center mt-5">
+    <div style="width: 60%; height: 500px;" class=" map d-flex justify-content-center"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
     data-map-user-value="<%= @user_marker.to_json %>" data-dash-path="<%= dash_path %>">
+    </div>
   </div>
 </div>

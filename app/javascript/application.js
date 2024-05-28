@@ -11,7 +11,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [139.6917, 35.6895], // 初期表示位置を設定
+    center: [139.6917, 35.6895],
     zoom: 12,
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var arrowIcon = document.querySelector('.arrow-icon');
+  var scrollTopIcon = document.querySelector('.scroll-top-icon');
+
+  window.addEventListener('scroll', function() {
+      var pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      if (window.scrollY > pageHeight / 2) {
+          arrowIcon.style.display = 'none';
+          scrollTopIcon.style.display = 'block';
+      } else {
+          arrowIcon.style.display = 'block';
+          scrollTopIcon.style.display = 'none';
+      }
+  });
+
+  if (scrollTopIcon) {
+      scrollTopIcon.addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  }
+
+  if (arrowIcon) {
+      arrowIcon.addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: 'smooth'
+          });
+      });
+  }
 });

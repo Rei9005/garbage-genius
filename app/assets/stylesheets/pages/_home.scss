@@ -1,1 +1,95 @@
 // Specific CSS for your home-page
+.home-image {
+  height:100%;
+  width: 650px;
+  object-fit: cover;
+  margin: auto;
+  padding:0;
+  display: block;
+
+  // &:hover {
+  //   transform: scale(1.15);
+  // }
+}
+.arm-image {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 450px;
+}
+
+.garbages-image{
+  height:100%;
+  width: 400px;
+  object-fit: cover;
+  margin: auto;
+  padding:0;
+  display: block;
+
+}
+
+.body {
+  background-color: #FBF6EF;
+}
+
+.who-we-are {
+  height: 50vh;
+ background-color: rgb(103, 211, 241);
+ padding-top: 100px;
+
+ .whoweare {
+  padding: 50px 50px;
+
+ }
+
+ h2 {
+  font-weight: 800;
+ }
+}
+
+.why-sign-up {
+  height: 50vh;
+  background-color: rgb(103, 211, 241);
+  padding: 50px 50px;
+  h2 {
+    font-weight: 800;
+  }
+}
+
+.garbage-genius-home {
+  height: 100vh;
+  margin-top: 100px;
+  background: linear-gradient(to bottom, #FBF6EF 50%, rgb(103, 211, 241) 50%);
+  position: relative;
+}
+
+
+// .why-sign-up{
+
+//   height: 100vh;
+// }
+
+
+
+.arrow-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+
+.scroll-top-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 999;
+}
