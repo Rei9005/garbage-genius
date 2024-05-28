@@ -21,4 +21,27 @@
   .current-month {}
 
   .has-events {}
+
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.week.current-week {
+  td {
+    border: 3px solid;
+  }
+}
+
+
+
+
+.table-striped {
+  thead {
+
+
+    th {
+      border: 3px solid;
+    }
+  }
 }

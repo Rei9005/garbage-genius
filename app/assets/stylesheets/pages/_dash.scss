@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
 
 .alert-settings {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+
+  text-align: center;
+
+
 }
 
 .alert-settings h2 {
@@ -17,4 +17,47 @@
 
 .alert-item p {
   margin: 5px 0;
+}
+.bar-banner {
+  text-align: center;
+  margin-top: 50px;
+  h2 {
+      color: black;
+      background: rgb(103, 211, 241);
+      border-radius: 0.6rem;
+      border: solid 3px black;
+      width: fit-content;
+      align-items: center;
+      margin:auto;
+        font-weight: 550;
+        font-size: 30px;
+        text-align: center;
+        padding: 10px 40px;
+
+    }
+  p {
+    font-size: 23px;
+margin-top: 10px;
+    }
+  }
+
+
+
+.calendar-heading {
+
+  a {
+    text-decoration: none;
+    color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 2px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
+
+ &:hover {
+  opacity: 1;
+}
+  }
 }
