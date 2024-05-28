@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_24_025240) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_28_012849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_24_025240) do
     t.datetime "updated_at", null: false
     t.index ["spot_date_id"], name: "index_alerts_on_spot_date_id"
     t.index ["user_id"], name: "index_alerts_on_user_id"
+  end
+
+  create_table "help_requests", force: :cascade do |t|
+    t.bigint "asker_id", null: false
+    t.bigint "helper_id"
+    t.bigint "spot_date_id", null: false
+    t.string "asker_comment"
+    t.string "helper_comment"
+    t.string "request_status", default: "Pending", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asker_id"], name: "index_help_requests_on_asker_id"
+    t.index ["helper_id"], name: "index_help_requests_on_helper_id"
+    t.index ["spot_date_id"], name: "index_help_requests_on_spot_date_id"
   end
 
   create_table "spot_dates", force: :cascade do |t|
@@ -78,6 +92,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_24_025240) do
 
   add_foreign_key "alerts", "spot_dates"
   add_foreign_key "alerts", "users"
+  add_foreign_key "help_requests", "spot_dates"
+  add_foreign_key "help_requests", "users", column: "asker_id"
+  add_foreign_key "help_requests", "users", column: "helper_id"
   add_foreign_key "spot_dates", "spots"
   add_foreign_key "spot_visits", "spot_dates"
   add_foreign_key "spot_visits", "users"
