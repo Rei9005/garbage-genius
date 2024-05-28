@@ -32,7 +32,7 @@
     <%= f.input :morning_alert_at,
                 required: false,
                 label: "at [HH:MM]",
-                input_html: { autocomplete: "alert_1" } %>
+                input_html: { autocomplete: "alert_1", value: 0 } %>
                 </div>
                 </div>
 
@@ -41,9 +41,7 @@
 
     <div class="form-actions">
       <%= f.button :submit, "Cancel" %>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Save" %>
+      <%= f.submit "Save" %>
     </div>
     <div class="Privacy-policy">
       <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>

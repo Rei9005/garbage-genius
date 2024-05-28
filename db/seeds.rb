@@ -13,11 +13,13 @@ require 'date'
 puts "=========="
 puts "Cleaning the DB..."
 
+HelpRequest.destroy_all
 User.destroy_all
 Spot.destroy_all
 SpotDate.destroy_all
 Alert.destroy_all
 SpotVisit.destroy_all
+
 
 puts "Done cleaning the DB..."
 puts "----------"
