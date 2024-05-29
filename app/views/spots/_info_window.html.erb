@@ -5,7 +5,8 @@
   <div>
   <% else %>
     <div>
-      <%= simple_form_for([spot, current_user]) do |f| %>
+      <%= simple_form_for(current_user) do |f| %>
+        <%= f.input :spot_id, value:spot.id, as: :hidden %>
         <%= f.submit "Set Spot", class: 'set-spot-button' %>
       <% end %>
     </div>

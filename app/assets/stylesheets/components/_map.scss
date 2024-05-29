@@ -14,6 +14,11 @@
 
 }
 
+.mapboxgl-popup-content:has(form){
+  background: transparent;
+  border: none;
+}
+
 .mapboxgl-popup-tip {
 border: none;
 }
@@ -37,5 +42,13 @@ display: none;
 }
 
 .mapboxgl-ctrl-geocoder--button{
+  display: none;
+}
+
+.user_spot_id {
+ display: none;
+}
+
+.mapboxgl-popup-close-button{
   display: none;
 }
