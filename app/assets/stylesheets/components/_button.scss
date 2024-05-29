@@ -26,14 +26,34 @@
     color: white;
   }
 }
+.dash-button {
+  background-color:rgb(103, 211, 241);
+  border: none;
+  padding: 8px 14px;
+  font-size: 17px;
+  font-weight: 510;
+  border-radius: 0.6rem;
+  border: solid 3px black;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color: white;
+  }
+}
 
 .btn-signup {
-  background-color: blue;
+  background-color:rgb(103, 211, 241);
   border: none;
-  color: white;
   padding: 12px 16px;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 510;
+  border-radius: 0.6rem;
+  border: solid 3px black;
   cursor: pointer;
+  &:hover{
+    color: white;
+  }
 }
 
 .sign-up-btn {
@@ -43,12 +63,52 @@
 	text-decoration: none;
 	background: rgb(103, 211, 241);
 	border-radius: 0.6rem;
+  border: solid 3px black;
 	font-weight: 550;
 	font-size: 20px;
-  border: solid 3px black;
   &:hover{
     color: white;
   }
   position: fixed;
   right: 46%;
+}
+
+.save-btn {
+  background-color:rgb(103, 211, 241);
+  border: none;
+  padding: 8px 14px;
+  font-size: 17px;
+  font-weight: 510;
+  border-radius: 0.6rem;
+  border: solid 3px black;
+  cursor: pointer;
+  width: 100px;
+  &:hover{
+    color: white;
+  }
+}
+
+
+.cancel-btn {
+  background-color:white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 17px;
+  font-weight: 510;
+  border-radius: 0.6rem;
+  border: solid 3px black;
+  cursor: pointer;
+  margin-bottom: 4px;
+  width: 100px;
+  &:hover{
+    background-color:white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 17px;
+    font-weight: 510;
+    border-radius: 0.6rem;
+    border: solid 3px black;
+    cursor: pointer;
+    color: grey;
+  }
 }
