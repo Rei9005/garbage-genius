@@ -24,9 +24,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.spot_id = params[:spot_id]
-    if @user.save
+    @user = current_user
+    @user.spot_id = params[:spot_id] if params[:spot_id]
+    if @user.update(user_params)
       redirect_to dash_path
     else
       render 'spots', status: :uprocessable_entity
