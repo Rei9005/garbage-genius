@@ -647,6 +647,17 @@ user3 = User.create!(
   evening_alert_at: "",
   morning_alert_at: "",
 )
+
+user4 = User.create!(
+  email: "oscar@email.com",
+  password: "444444",
+  name: "Oscar",
+  line_id: "oscar",
+  address: "",
+  spot_id: spot1.id,
+  # Oscar is simply assigned to spot1
+)
+
 puts "Done creating users..."
 puts "----------"
 puts "Creating pickup details (spot dates)..."
@@ -1193,7 +1204,7 @@ SpotDate.find_each do |spot_date|
     SpotVisit.create(
       spot_date: spot_date,
       user: User.all.sample,
-      time: spot_date.scheduled_time + rand(15..59).minutes
+      time: spot_date.scheduled_time + rand(15..159).minutes
     )
   end
 end
@@ -1204,6 +1215,6 @@ puts "Done creating visits..."
 
 
 puts "=========="
-puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, #{Alert.count} alerts, and #{SpotVisit.count} reported visits."
+puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, #{Alert.count} alerts,  #{SpotVisit.count} reported visits."
 
 # This is junk comment to differentiate the file from a previous push
