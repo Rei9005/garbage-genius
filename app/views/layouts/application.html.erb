@@ -11,6 +11,8 @@
   <body>
     <% if current_page?(root_path) %>
       <%= render 'layouts/navbar_home' %>
+    <% elsif current_page?(dash_path)  %>
+    <%= render 'layouts/navbar_dash' %>
     <% else %>
       <%= render 'layouts/navbar_other' %>
     <% end %>

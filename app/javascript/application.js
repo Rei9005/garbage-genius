@@ -4,18 +4,6 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 
-import mapboxgl from 'mapbox-gl';
-
-document.addEventListener('DOMContentLoaded', () => {
-  mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [139.6917, 35.6895],
-    zoom: 12,
-  });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
   var arrowIcon = document.querySelector('.arrow-icon');
   var scrollTopIcon = document.querySelector('.scroll-top-icon');

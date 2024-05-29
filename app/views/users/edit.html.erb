@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Edit Profile/Settings</h2>
+  <h2 class="sign-up-title">Edit Profile/Settings</h2>
   <%= simple_form_for(current_user, url: :settings) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
@@ -30,23 +30,22 @@
       <%= f.input :morning_alert, label: "morning", input_html: {value: current_user.morning_alert, "data-action": "change->alert-preference#toggle"} %>
             <div data-alert-preference-target="inputs" class="<%='d-none' unless current_user.morning_alert %>">
     <%= f.input :morning_alert_at,
+
                 required: false,
                 label: "at [HH:MM]",
                 input_html: { autocomplete: "alert_1", value: 0 } %>
-                </div>
-                </div>
-
-  </div>
-  </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Cancel" %>
-      <%= f.submit "Save" %>
+        </div>
+      </div>
     </div>
-    <div class="Privacy-policy">
-      <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
-      <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p>
-      </strong>
-    <% end %>
   </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Cancel", class:"cancel-btn" %>
+    <%= f.submit "Save" ,class:"save-btn"%>
+  </div>
+  <div class="Privacy-policy">
+    <p>By signing up to create an account I accept Company’s Terms of Use and Privacy Policy.</p>
+    <p><string>Copyright 2024 Garbage Genius.  All rights reserved</p>
+    </strong>
+  <% end %>
+</div>
 </div>
