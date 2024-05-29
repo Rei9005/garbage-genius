@@ -94,25 +94,26 @@
 </html>
 <!-- Alert Settings -->
 <div class="alert-settings">
-  <h2>Current Alert Settings</h2>
+  <h2>Notifications</h2>
 
   <div class="alert-item">
-    <p>Alert 1: Day Before Pickup</p>
+    <%= simple_form_for current_user do |f| %>
+    <label for="appt", class="fa-solid fa-moon"> Night before:</label>
     <% if current_user.evening_alert_at.present? %>
-      <p><%= current_user.evening_alert_at.strftime("%I:%M %p") %></p>
+      <input type="time" id="appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
     <% else %>
       <p>No evening alert set</p>
     <% end %>
-  </div>
-  <div class="alert-item">
-    <p>Alert 2: Day of Pickup</p>
+
+    <label for="appt", class="fa-regular fa-sun"> Morning:</label>
     <% if current_user.morning_alert_at.present? %>
-      <p><%= current_user.morning_alert_at.strftime("%I:%M %p") %></p>
+      <input type="time" id="appt" name="user[morning_alert_at]" required value="<%= current_user.morning_alert_at.strftime("%H:%M")%>"/>
     <% else %>
       <div class="bar-banner">
         <p>No upcoming garbage collection scheduled.</p>
       </div>
     <% end %>
+    <%= f.submit %>
+    <% end %>
   </div>
 </div>
-
