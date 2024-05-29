@@ -686,7 +686,7 @@ puts "Creating pickup details (spot dates)..."
 #   scheduled_time: Time.parse("15:30")
 # )
 
-# Seeding pickup schedule for Lord Hayato based on official Minato schdule
+# Seeding pickup schedule for Hayato based on official Minato schdule
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time:  '8:00')
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time:  '8:00')
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time:  '8:00')
@@ -1185,10 +1185,11 @@ puts "Creating history of visits..."
 
 SpotDate.find_each do |spot_date|
   rand(5..7).times do
+    time = Time.new(2024, spot_date.date.month, spot_date.date.day, 8,0,0, "+09:00")
     SpotVisit.create(
       spot_date: spot_date,
       user: User.all.sample,
-      time: spot_date.scheduled_time + rand(-9..-6).hours  + (rand(0..59)).minutes
+      time: time + rand(1..600)*60
       # spot_date.scheduled_time is 17:00 for some reason (likely because of UTC settings)
       # Unless a time zone is used,  the random jumber should be from -9 to -6
       # time: spot_date.scheduled_time + rand(-9..-6).hours  + (rand(0..59)).minutes
