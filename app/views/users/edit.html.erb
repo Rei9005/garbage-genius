@@ -18,7 +18,7 @@
 
     <label for="preferences">Choose an alert preference</label>
     <div data-controller="alert-preference"> 
-      <%= f.input :evening_alert,  label: "remind me the day before", input_html: {value: current_user.evening_alert, "data-action": "change->alert-preference#toggle"} %>
+      <%= f.input :evening_alert,  label: "night before", input_html: {value: current_user.evening_alert, "data-action": "change->alert-preference#toggle"} %>
             <div data-alert-preference-target="inputs" class="<%='d-none' unless current_user.evening_alert %>">
     <%= f.input :evening_alert_at,
                 required: false,
@@ -27,7 +27,7 @@
                 </div>
                 </div>
  <div data-controller="alert-preference"> 
-      <%= f.input :morning_alert, label: "remind me on the day of collection", input_html: {value: current_user.morning_alert, "data-action": "change->alert-preference#toggle"} %>
+      <%= f.input :morning_alert, label: "morning", input_html: {value: current_user.morning_alert, "data-action": "change->alert-preference#toggle"} %>
             <div data-alert-preference-target="inputs" class="<%='d-none' unless current_user.morning_alert %>">
     <%= f.input :morning_alert_at,
                 required: false,
