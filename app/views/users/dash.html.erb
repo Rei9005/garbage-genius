@@ -102,7 +102,7 @@
       <% @asker_help_requests.each do |asker_help_request| %>
         <div class="request">
           <div class="request-status">
-            <p><%=  asker_help_request.request_status %></p>
+            <span><%=  asker_help_request.pending? ? 'Pending' : 'Help Accepted' %></span>
           </div>
           <div class="request-info">
             <div>
@@ -171,9 +171,16 @@
       <h2>My Neighbor's Requests</h2>
       <% @neighbor_help_requests.each do |neighbor_help_request| %>
         <div class="request">
-          <div class="request-status">
-            <p><%=  neighbor_help_request.request_status %></p>
-          </div>
+          <% if neighbor_help_request.pending? %>
+            <%= simple_form_for neighbor_help_request do |f| %>
+              <%= f.input :request_status, as: :hidden, input_html: { value: "accepted"} %>
+              <%= f.submit "Help Out", class: 'btn btn-primary' %>
+            <% end %>
+          <% else %>
+            <div class="request-status">
+              <span>Help Accepted</span>
+            </div>
+          <% end %>
           <div class="request-info">
             <div>
               <p><%=  neighbor_help_request.spot_date.date.strftime('%a') %></p>

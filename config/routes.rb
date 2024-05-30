@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   resources :spot_dates, only: [:create] do
     resources :spot_visits, only: [:create]
-    resources :help_requests, only: [:create, :update]
+    resources :help_requests, only: [:create]
   end
+
+  resources :help_requests, only: [:update]
 
   resources :alerts, only: [:index]
   post "/callback", to: 'pages#line'

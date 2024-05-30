@@ -10,5 +10,17 @@ class HelpRequestsController < ApplicationController
     redirect_to dash_path
   end
 
+  def update
+    help_request = HelpRequest.find(params[:id])
+    help_request.helper = request_params[:request_status] == 'accepted' ? current_user : nil
+    help_request.update(request_params)
+  end
+
+  private
+
+
+  def request_params
+    params.require(:help_request).permit(:request_status)
+  end
 
 end

@@ -861,28 +861,28 @@ helper: user5,
 spot_date: @spot_schedule_HR1,
 asker_comment: "Yo homies, I need help",
 helper_comment: "NP",
-request_status: "Help arranged"
+request_status: "accepted"
 )
 
 request2 = HelpRequest.create!(
 asker: user1,
 helper: nil,
 spot_date: @spot_schedule_HR2,
-request_status: "Pending"
+request_status: "pending"
 )
 
 request3 = HelpRequest.create!(
 asker: user4,
 helper: user1,
 spot_date: @spot_schedule_HR3,
-request_status: "Help arranged"
+request_status: "accepted"
 )
 
 request4 = HelpRequest.create!(
 asker: user5,
 helper: nil,
 spot_date: @spot_schedule_HR3,
-request_status: "Pending"
+request_status: "pending"
 )
 puts "Done creating help requests..."
 
