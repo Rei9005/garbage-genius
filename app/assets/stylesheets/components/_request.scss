@@ -3,19 +3,12 @@
   justify-content: space-between;
   align-items: center;
   margin: 16px 0;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,.5);
-
-  .request-img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-
 
 
   .request-left {
@@ -23,17 +16,14 @@
     align-items: center;
   }
 
-  .request-actions {
-    display: flex;
-    align-items: center;
-  }
-  .request-tag {
-    margin: 1px 4px;
-    padding: 2px 5px 0px 5px;
-    background-color: #bfbfbf;
-    color: white;
-    border-radius: 8px;
-    font-weight: lighter;
+}
+.request-status {
+  margin: 1px 4px;
+  padding: 2px 5px 0px 5px;
+  background-color: #5d5d5d;
+  color: white;
+  border-radius: 8px;
+  font-weight: lighter;
     font-size: 12px;
   }
 
@@ -51,18 +41,22 @@
       font-weight: lighter;
     }
 
-    .request-financial {
+    .request-contact {
       display: flex;
       flex-direction: column;
       margin-left: 8px;
 
-      .request-financial-title {
+      .request-contact-title {
         font-weight: bolder;
         font-size: 1.2em;
       }
 
-      .request-financial-details {
+      .request-contact-details {
         font-weight: lighter;
       }
     }
+
+    .request-actions {
+      display: flex;
+      align-items: center;
   }

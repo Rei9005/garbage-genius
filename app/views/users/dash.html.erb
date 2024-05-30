@@ -6,10 +6,12 @@
 <div class = uppper-section>
   <div class="calendar mt-3">
 
+
     <%= calendar(number_of_days: 5, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
       <div class="spot_detail d-flex flex-column justify-content-between h-100">
         <div><%= date.strftime("%b %-d")  %></div>
         <% spot_details.each do |spot_detail| %>
+
           <div>
             <% if spot_detail.collection_type == "C" %>
               <h3><%= 'Combustible' %></h3>
@@ -100,16 +102,55 @@
 
     </div>
     <div class = "lower-right col-6">
-      <div class="my-requests">
-        <h2>[Placeholder for My Requests]</h2>
-        <p>Junk Text</p>
-        <p>Junk Text</p>
-      </div>
-      <div class="neighbor-requests">
-        <h2>[Placeholder for My Neighbor's Requests]</h2>
-        <p>Junk Text</p>
-        <p>Junk Text</p>
-      </div>
-    </div>
-  </div>
-</div>
+
+      <h2>My Requests</h2>
+      <% @asker_help_requests.each do |asker_help_request| %>
+        <div class="request">
+          <div class="request-status">
+            <p><%=  asker_help_request.request_status %></p>
+          </div>
+          <div class="request-info">
+            <div>
+              <p><%=  asker_help_request.spot_date.date.strftime('%a') %></p>
+            </div>
+            <div>
+              <p><%=  asker_help_request.spot_date.date.strftime("%b %-d") %></p>
+            </div>
+            <div>
+              <% if asker_help_request.spot_date.collection_type == "C" %>
+                <div class="text-center">
+                  <i class="fa-solid fa-fire fa-2xl"></i>
+                </div>
+              <% elsif asker_help_request.spot_date.collection_type == "GCM"%>
+                <div class="icons d-flex justify-content-between">
+                  <div>
+                    <i class="fa-solid fa-champagne-glasses fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-faucet fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-mug-saucerfa-2xl"></i>
+                  </div>
+                </div>
+              <% elsif asker_help_request.spot_date.collection_type == "RP"%>
+                <div class="text-center">
+                  <i class="fa-solid fa-recycle fa-2xl"></i>
+                </div>
+              <% elsif asker_help_request.spot_date.collection_type == "UPBBC"%>
+                <div class="icons d-flex justify-content-between">
+                  <div>
+                    <i class="fa-regular fa-newspaper fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-bottle-water fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-wine-bottle fa-2xl"></i>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>

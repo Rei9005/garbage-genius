@@ -1,0 +1,22 @@
+
+        <% @asker_help_requests.each do |asker_help_request| %>
+          <p><%=  asker_help_request.spot_date.date.strftime('%a') %></p>
+          <p><%=  asker_help_request.spot_date.date.strftime("%b %-d") %></p>
+          <p><%=  asker_help_request.spot_date.collection_type %></p>
+          <p><%=  asker_help_request.request_status %></p>
+          <p><%=  asker_help_request.helper&.name %></p>
+          <!-- "&"" will only show if only if the class is not nil -->
+          <p>-----------------</p>
+        <% end %>
+      </div>
+      <h2>Neighbors' Requests</h2>
+      <div class="request">
+        <% @neighbor_help_requests.each do |neighbor_help_request| %>
+          <p><%=  neighbor_help_request.spot_date.date %></p>
+          <p><%=  neighbor_help_request.spot_date.collection_type %></p>
+          <p><%=  neighbor_help_request.request_status %></p>
+          <p><%=  neighbor_help_request.helper&.name %></p>
+          <!-- "&"" will only show if only if the class is not nil -->
+          <p>-----------------</p>
+        <% end %>
+      </div>
