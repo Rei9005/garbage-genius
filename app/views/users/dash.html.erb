@@ -5,9 +5,11 @@
 </div>
 <div class = uppper-section>
   <div class="calendar mt-3">
-    <%= calendar(number_of_days: 7, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
-      <% spot_details.each do |spot_detail| %>
-        <div class="spot_detail d-flex flex-column justify-content-between h-100">
+
+    <%= calendar(number_of_days: 5, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
+      <div class="spot_detail d-flex flex-column justify-content-between h-100">
+        <div><%= date.strftime("%b %-d")  %></div>
+        <% spot_details.each do |spot_detail| %>
           <div>
             <% if spot_detail.collection_type == "C" %>
               <h3><%= 'Combustible' %></h3>
@@ -48,17 +50,8 @@
             <% end %>
           </div>
           <div class="box-bottom">
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <% if date > Date.today  %>
-              <% if HelpRequest.find_by(asker: current_user , spot_date: spot_detail ) %>
-                <p class="pending-text">Request pending...</p>
-              <% else %>
-                <%= simple_form_for([spot_detail, @help_request]) do |f| %>
-                  <%= f.submit  "Request Help", class:"request-submit"%>
-                <% end  %>
-              <% end %>
-            <% end %>
+            <p><span class="pill-box color-white"><%= spot_detail.scheduled_time.strftime('%H:%M') %></span>: Scheduled</p>
+            <p><span class="pill-box"><%= spot_detail.average_pickup_time.strftime('%H:%M') %></span>: Reported by others</p>
           </div>
         <% end %>
       <% end %>
@@ -70,6 +63,7 @@
     <div class = "lower-left col-6">
       <div class="alert-settings">
         <h2>Alerts</h2>
+
         <div class="alert-item">
           <%= simple_form_for current_user do |f| %>
             <label for="appt", class="fa-solid fa-moon"> Night before:</label>
@@ -103,29 +97,18 @@
           </div>
         </div>
       </div>
+
     </div>
     <div class = "lower-right col-6">
-      <h2>My Requests</h2>
-      <div class="request">
-        <% @asker_help_requests.each do |asker_help_request| %>
-          <p><%=  asker_help_request.spot_date.date %></p>
-          <p><%=  asker_help_request.spot_date.collection_type %></p>
-          <p><%=  asker_help_request.request_status %></p>
-          <p><%=  asker_help_request.helper&.name %></p>
-          <!-- "&"" will only show if only if the class is not nil -->
-          <p>-----------------</p>
-        <% end %>
+      <div class="my-requests">
+        <h2>[Placeholder for My Requests]</h2>
+        <p>Junk Text</p>
+        <p>Junk Text</p>
       </div>
-      <h2>Neighbors' Requests</h2>
-      <div class="request">
-        <% @neighbor_help_requests.each do |neighbor_help_request| %>
-          <p><%=  neighbor_help_request.spot_date.date %></p>
-          <p><%=  neighbor_help_request.spot_date.collection_type %></p>
-          <p><%=  neighbor_help_request.request_status %></p>
-          <p><%=  neighbor_help_request.helper&.name %></p>
-          <!-- "&"" will only show if only if the class is not nil -->
-          <p>-----------------</p>
-        <% end %>
+      <div class="neighbor-requests">
+        <h2>[Placeholder for My Neighbor's Requests]</h2>
+        <p>Junk Text</p>
+        <p>Junk Text</p>
       </div>
     </div>
   </div>
