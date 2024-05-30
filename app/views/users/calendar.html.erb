@@ -1,57 +1,66 @@
 <div class="container">
   <div class="button-group mr-2 mt-2">
-  <%= link_to "Dashboard", dash_path, class: "dash-button" %>
-  <%= link_to "Map", spots_path(current_user), class: "dash-button" %>
-  <%= link_to "Settings", edit_user_path(current_user), class: "dash-button" %>
-</div>
+    <%= link_to "Dashboard", dash_path, class: "dash-button" %>
+    <%= link_to "Map", spots_path(current_user), class: "dash-button" %>
+    <%= link_to "Settings", edit_user_path(current_user), class: "dash-button" %>
+  </div>
   <%= month_calendar(number_of_days: 14, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
-      <%= date.strftime("%b %-d")  %>
-      <p></p>
+    <div class="spot_detail d-flex flex-column justify-content-between h-100">
+      <div><%= date.strftime("%b %-d")  %></div>
       <% spot_details.each do |spot_detail| %>
-        <div class="spot_detail">
+        <div>
           <% if spot_detail.collection_type == "C" %>
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <p></p>
-            <i class="fa-solid fa-fire <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <p></p>
-            <p><%= 'Combustible' %></p>
+            <h3><%= 'Combustible' %></h3>
+            <div class="text-center">
+              <i class="fa-solid fa-fire <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            </div>
           <% elsif spot_detail.collection_type == "GCM"%>
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <p></p>
-            <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <p></p>
-            <p><%= 'Glass, Ceramic and Metallic' %></p>
-            <p></p>
+            <h3><%= 'Glass, Ceramic, Metallic' %></h3>
+            <div class="icons d-flex justify-content-between">
+              <div>
+                <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-mug-saucer<%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+            </div>
           <% elsif spot_detail.collection_type == "RP"%>
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <p></p>
-            <i class="fa-solid fa-recycle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <p></p>
-            <p><%= 'Recyclable plastics' %></p>
+            <h3><%= 'Recyclable plastics' %></h3>
+            <div class="text-center">
+              <i class="fa-solid fa-recycle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            </div>
           <% elsif spot_detail.collection_type == "UPBBC"%>
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <p></p>
-            <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <i class="fa-solid fa-wine-bottle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
-            <p></p>
-            <p><%= 'Used paper, Plastic bottles, Bottles, Cans' %></p>
+            <h3><%= 'Used paper, Plastic bottles, Bottles, Cans' %></h3>
+            <div class="icons d-flex justify-content-between">
+              <div>
+                <i class="fa-regular fa-newspaper <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-bottle-water <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-wine-bottle <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+              </div>
+            </div>
           <% end %>
+        </div>
+        <div class="box-bottom">
+          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
+          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
           <% if date > Date.today  %>
             <% if HelpRequest.find_by(asker: current_user , spot_date: spot_detail ) %>
-              Request pending...
+              <p class="pending-text">Request pending...</p>
             <% else %>
               <%= simple_form_for([spot_detail, @help_request]) do |f| %>
-                <%= f.submit  "Request Help"%>
+                <%= f.submit  "Request Help", class:"request-submit"%>
               <% end  %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
       <% end %>
+    <% end %>
+  </div>
 </div>

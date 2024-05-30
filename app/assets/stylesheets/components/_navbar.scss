@@ -18,3 +18,12 @@
   color: #ED0E10;
   font-size: 35px;
 }
+
+
+.home-btn {
+  text-decoration: none;
+  color: black;
+&:hover {
+  color: grey;
+}
+}

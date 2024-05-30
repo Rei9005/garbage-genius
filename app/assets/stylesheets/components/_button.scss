@@ -22,6 +22,8 @@
 	font-weight: 550;
 	font-size: 20px;
   border: solid 3px black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     color: white;
   }
@@ -37,6 +39,8 @@
   cursor: pointer;
   text-decoration: none;
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     color: white;
   }
@@ -51,6 +55,8 @@
   border-radius: 0.6rem;
   border: solid 3px black;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     color: white;
   }
@@ -66,6 +72,8 @@
   border: solid 3px black;
 	font-weight: 550;
 	font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     color: white;
   }
@@ -83,6 +91,8 @@
   border: solid 3px black;
   cursor: pointer;
   width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     color: white;
   }
@@ -100,6 +110,8 @@
   cursor: pointer;
   margin-bottom: 4px;
   width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   &:hover{
     background-color:white;
     border: none;
