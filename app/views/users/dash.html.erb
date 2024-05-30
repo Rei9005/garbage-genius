@@ -107,26 +107,70 @@
     <div class = "lower-right col-6">
       <h2>My Requests</h2>
       <div class="request">
-        <% @asker_help_requests.each do |asker_help_request| %>
-          <p><%=  asker_help_request.spot_date.date %></p>
-          <p><%=  asker_help_request.spot_date.collection_type %></p>
-          <p><%=  asker_help_request.request_status %></p>
-          <p><%=  asker_help_request.helper&.name %></p>
-          <!-- "&"" will only show if only if the class is not nil -->
-          <p>-----------------</p>
-        <% end %>
-      </div>
-      <h2>Neighbors' Requests</h2>
-      <div class="request">
-        <% @neighbor_help_requests.each do |neighbor_help_request| %>
-          <p><%=  neighbor_help_request.spot_date.date %></p>
-          <p><%=  neighbor_help_request.spot_date.collection_type %></p>
-          <p><%=  neighbor_help_request.request_status %></p>
-          <p><%=  neighbor_help_request.helper&.name %></p>
-          <!-- "&"" will only show if only if the class is not nil -->
-          <p>-----------------</p>
-        <% end %>
+        <div class="request-left">
+          <div>
+            <p>This is request-left</p>
+          </div>
+          <div>
+            <p>This is request-left</p>
+          </div>
+        </div>
+        <div class="request-tag">
+          <div>
+            <p>This is request-tag</p>
+          </div>
+          <div>
+            <p>This is request-tag</p>
+          </div>
+        </div>
+        <div class="request-info">
+          <div>
+            <p>This is request-info</p>
+          </div>
+          <div>
+            <p>This is request-info</p>
+          </div>
+        </div>
+        <div class="request-details">
+          <div>
+            <p>This is request-details</p>
+          </div>
+          <div>
+            <p>This is request-details</p>
+          </div>
+        </div>
+        <div class="request-contact">
+          <div>
+            <p>This is request-contact</p>
+          </div>
+          <div>
+            <p>This is request-contact</p>
+          </div>
+        </div>
+        <div class="request-contact-title">
+          <div>
+            <p>This is request-contact-title</p>
+          </div>
+          <div>
+            <p>This is request-contact-title</p>
+          </div>
+        </div>
+        <div class="request-contact-details">
+          <div></div>
+          <div>
+            <p>This is request-contact-details</p>
+          </div>
+          <div>
+            <p>This is request-contact-details</p>
+          </div>
+        </div>
+        <div class="request-request-actions">
+          <div>
+            <p>This is request-request-actions</p>
+          </div>
+          <div>
+            <p>This is request-request-actions</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>

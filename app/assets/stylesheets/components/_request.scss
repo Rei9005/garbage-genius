@@ -23,17 +23,14 @@
     align-items: center;
   }
 
-  .request-actions {
-    display: flex;
-    align-items: center;
-  }
-  .request-tag {
-    margin: 1px 4px;
-    padding: 2px 5px 0px 5px;
-    background-color: #bfbfbf;
-    color: white;
-    border-radius: 8px;
-    font-weight: lighter;
+}
+.request-tag {
+  margin: 1px 4px;
+  padding: 2px 5px 0px 5px;
+  background-color: #bfbfbf;
+  color: white;
+  border-radius: 8px;
+  font-weight: lighter;
     font-size: 12px;
   }
 
@@ -51,18 +48,22 @@
       font-weight: lighter;
     }
 
-    .request-financial {
+    .request-contact {
       display: flex;
       flex-direction: column;
       margin-left: 8px;
 
-      .request-financial-title {
+      .request-contact-title {
         font-weight: bolder;
         font-size: 1.2em;
       }
 
-      .request-financial-details {
+      .request-contact-details {
         font-weight: lighter;
       }
     }
+
+    .request-actions {
+      display: flex;
+      align-items: center;
   }
