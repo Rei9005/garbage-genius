@@ -19,6 +19,7 @@ Spot.destroy_all
 SpotDate.destroy_all
 Alert.destroy_all
 SpotVisit.destroy_all
+HelpRequest.destroy_all
 
 
 puts "Done cleaning the DB..."
@@ -648,11 +649,32 @@ user3 = User.create!(
   morning_alert_at: "",
 )
 
+# Users 4-6 were created to test HelpRequest feature
 user4 = User.create!(
   email: "oscar@email.com",
   password: "444444",
   name: "Oscar",
   line_id: "oscar",
+  address: "",
+  spot_id: spot1.id,
+  # Oscar is simply assigned to spot1
+)
+
+user5 = User.create!(
+  email: "elmo@email.com",
+  password: "555555",
+  name: "Elmo",
+  line_id: "elmo",
+  address: "",
+  spot_id: spot1.id,
+  # Oscar is simply assigned to spot1
+)
+
+user6 = User.create!(
+  email: "bert@email.com",
+  password: "666666",
+  name: "Bert",
+  line_id: "bert",
   address: "",
   spot_id: spot1.id,
   # Oscar is simply assigned to spot1
@@ -1210,11 +1232,46 @@ SpotDate.find_each do |spot_date|
 end
 
 
-
 puts "Done creating visits..."
 
 
+# request1 = HelpRequest.create!(
+# asker: user4,
+# spot_date: SpotDate.where(date: "2024-06-04")
+# )
+
+# request1 = HelpRequest.create!(
+# asker_id: user4,
+# helper_id: nil,
+# spot_date_id: 1595,
+# asker_comment: nil,
+# helper_comment: nil,
+# )
+
+# request1 = HelpRequest.create!(
+# asker_id: user5,
+# helper_id: 4,
+# spot_date_id: 1597,
+# asker_comment: nil,
+# helper_comment: nil,
+# )
+
+request1 = HelpRequest.create!(
+asker: user6,
+helper: user5,
+spot_date: @spot_schedule,
+asker_comment: "Yo homies, I need help",
+helper_comment: nil,
+request_status: "Help arranged"
+)
+
+
+request2 = HelpRequest.create!(
+asker: user4,
+spot_date: @spot_schedule,
+)
+
 puts "=========="
-puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, #{Alert.count} alerts,  #{SpotVisit.count} reported visits."
+puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, #{Alert.count} alerts, #{SpotVisit.count} reported visits, and #{HelpRequest.count} help requests."
 
 # This is junk comment to differentiate the file from a previous push
