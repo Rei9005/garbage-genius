@@ -166,6 +166,25 @@
         <div></div>
       </div>
     <% end %>
+    <p>This is the next section</p>
+    <% if @neighbor_help_requests %>
+      <h2>My Neighbor's Requests</h2>
+      <% @neighbor_help_requests.each do |neighbor_help_request| %>
+        <div class="request">
+          <div class="request-status">
+            <p><%=  neighbor_help_request.request_status %></p>
+          </div>
+          <div class="request-info">
+            <div>
+              <p><%=  neighbor_help_request.spot_date.date.strftime('%a') %></p>
+            </div>
+            <div>
+              <p><%=  neighbor_help_request.spot_date.date.strftime("%b %-d") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 </div>
