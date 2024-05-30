@@ -3,19 +3,12 @@
   justify-content: space-between;
   align-items: center;
   margin: 16px 0;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,.5);
-
-  .request-img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-
 
 
   .request-left {
@@ -24,10 +17,10 @@
   }
 
 }
-.request-tag {
+.request-status {
   margin: 1px 4px;
   padding: 2px 5px 0px 5px;
-  background-color: #bfbfbf;
+  background-color: #5d5d5d;
   color: white;
   border-radius: 8px;
   font-weight: lighter;
