@@ -91,8 +91,8 @@
       </div>
     </div>
     <div class = "lower-right col-6">
+      <h2>My Requests</h2>
       <div class="request">
-        <h2>My Requests</h2>
         <% @asker_help_requests.each do |asker_help_request| %>
           <p><%=  asker_help_request.spot_date.date %></p>
           <p><%=  asker_help_request.spot_date.collection_type %></p>
@@ -102,8 +102,8 @@
           <p>-----------------</p>
         <% end %>
       </div>
-      <div class="neighbor-requests">
-        <h2>Neighbors' Requests</h2>
+      <h2>Neighbors' Requests</h2>
+      <div class="request">
         <% @neighbor_help_requests.each do |neighbor_help_request| %>
           <p><%=  neighbor_help_request.spot_date.date %></p>
           <p><%=  neighbor_help_request.spot_date.collection_type %></p>
