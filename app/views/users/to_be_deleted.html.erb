@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="requests">
+    <div class="request">
+      <div class='request-left'>
+        <div class="request-info">
+          <!-- the status info was placed here just for testing purposes
+            <p>request ID: <%= request.id %></p>
+            -->
+          <div class="request-info-title align-self-center">
+            <%= asker_help_request.spot_date.collection_type %> is requested by
+          </div>
+          <h3 class="align-self-center"><%= asker_help_request.helper&.name %></h3>
+          <!-- there is a strange gap between the stars and name -->
+          <!-- need this space because the dates below will otherwise be too
+            close to the stars above -->
+          <p></p>
+          <div class="request-info-details">
+            From <%= asker_help_request.spot_date.date %>
+            <!-- the status info was placed here just for testing purposes
+            <p>Status: <strong><%= request.status %></strong></p>
+            -->
+          </div>
+        </div>
+      </div>
+      <div class="request-financial">
+        <h3>Mid Section</h3>
+      </div>
+      <div class="request-actions">
+        <% if asker_help_request.request_status.pending? %>
+          <!-- Accept Button-->
+          <%= simple_form_for [:asker_help_request.request_status, request] do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-outline-primary' %>
+          <% end %>
+          <!-- Decline Button-->
+          <%= simple_form_for [:owner, request] do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Declined'} %>
+            <%= f.submit 'Decline', class: 'btn btn-outline-danger' %>
+          <% end %>
+        <% else %>
+          <!-- Status indicator instead of Accept / Decline buttons-->
+          <button type="button" class="btn btn-dark"><%= request.status %></button>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
