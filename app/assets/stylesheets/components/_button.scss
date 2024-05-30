@@ -112,3 +112,16 @@
     color: grey;
   }
 }
+
+
+.update-user {
+
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color:#67D3F1 ;
+  color: black;
+  font-weight: 510;
+  &:hover{
+    color: white;
+  }
+}

@@ -21,8 +21,8 @@
             <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
             <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
             <p></p>
-            <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
-            <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>>
+            <i class="fa-solid fa-champagne-glasses <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+            <i class="fa-solid fa-mug-saucer <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
             <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
             <p></p>
             <p><%= 'Glass, Ceramic and Metallic' %></p>
@@ -58,12 +58,12 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-6">
       <div class="alert-settings">
         <%# <h2>Notifications</h2> %>
-        <h1>THis section is for Notifications</h1>
+        <h1>This section is for Notifications</h1>
         <div class="alert-item">
           <%= simple_form_for current_user do |f| %>
             <label for="appt", class="fa-solid fa-moon"> Night before:</label>
@@ -80,7 +80,7 @@
                 <p>No collection tomorrow</p>
               </div>
             <% end %>
-            <%= f.submit %>
+            <%= f.submit class:"update-user"%>
           <% end %>
         </div>
       </div>
