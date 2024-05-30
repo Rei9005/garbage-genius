@@ -24,9 +24,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
-    @user.spot_id = params[:spot_id] if params[:spot_id]
-    if @user.update(user_params)
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    @user.spot = Spot.find(params[:spot_id]) if params[:spot_id]
+    if @user.save
       redirect_to dash_path
     else
       render 'spots', status: :uprocessable_entity
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
    end
 
    def user_params
-     params.require(:user).permit(:email, :name, :address, :evening_alert, :evening_alert_at, :morning_alert, :morning_alert_at )
+     params.require(:user).permit(:email, :name, :address, :evening_alert, :evening_alert_at, :morning_alert, :morning_alert_at, :spot_id )
    end
 
 end
