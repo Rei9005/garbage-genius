@@ -9,4 +9,6 @@ class HelpRequestsController < ApplicationController
     @spot_details = current_user.spot.spot_dates
     redirect_to dash_path
   end
+
+
 end

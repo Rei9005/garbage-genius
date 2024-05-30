@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'dash', to: 'users#dash', as: 'dash'
+  get 'calendar', to: 'users#calendar', as: 'calendar'
   resources :users, only: [:edit, :update]
   patch  "settings", to: "users#settings", as: :settings
-
 
   resources :spots, only: [:index, :show] do
     resources :users, only: [:update]

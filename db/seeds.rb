@@ -731,9 +731,9 @@ puts "Creating pickup details (spot dates)..."
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
+@spot_schedule_HR1 = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
+@spot_schedule_HR2  = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
+@spot_schedule_HR3 = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
@@ -749,7 +749,7 @@ puts "Creating pickup details (spot dates)..."
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
+@spot_schedule_HR4 = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
@@ -757,393 +757,11 @@ puts "Creating pickup details (spot dates)..."
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
+@spot_schedule_HR5 = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
 @spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot1.id, scheduled_time: Time.parse("08:00"))
-
-# Setting the same schedule for spot2
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot2.id, scheduled_time: Time.parse("08:00"))
-
-# Setting the same schedule for spot3
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot3.id, scheduled_time: Time.parse("08:00"))
-
-
-# Setting the same schedule for spot4
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot4.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot5
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot5.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot6
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot6.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot7
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot7.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot8
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot8.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot9
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot9.id, scheduled_time: Time.parse("08:00"))
-
-
-
-# Setting the same schedule for spot10
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,1,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,4,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,8,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,11,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,15,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,18,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,22,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,25,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,29,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,1,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,5,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,8,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,12,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,15,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,19,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,22,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,26,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,29,8,0,0), collection_type: 'C', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,6,8,0,0), collection_type: 'GCM', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,20,8,0,0), collection_type: 'GCM', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,3,8,0,0), collection_type: 'GCM', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,17,8,0,0), collection_type: 'GCM', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,7,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,14,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,21,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,28,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,4,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,11,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,18,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,25,8,0,0), collection_type: 'RP', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,3,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,10,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,17,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,24,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,5,31,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,7,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date:Time.new(2024,6,14,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,21,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
-@spot_schedule = SpotDate.create!(date: Time.new(2024,6,28,8,0,0), collection_type: 'UPBBC', spot_id: spot10.id, scheduled_time: Time.parse("08:00"))
 
 
 
@@ -1233,43 +851,41 @@ end
 
 
 puts "Done creating visits..."
+puts "----------"
+puts "Creating help requests..."
 
-
-# request1 = HelpRequest.create!(
-# asker: user4,
-# spot_date: SpotDate.where(date: "2024-06-04")
-# )
-
-# request1 = HelpRequest.create!(
-# asker_id: user4,
-# helper_id: nil,
-# spot_date_id: 1595,
-# asker_comment: nil,
-# helper_comment: nil,
-# )
-
-# request1 = HelpRequest.create!(
-# asker_id: user5,
-# helper_id: 4,
-# spot_date_id: 1597,
-# asker_comment: nil,
-# helper_comment: nil,
-# )
 
 request1 = HelpRequest.create!(
-asker: user6,
+asker: user1,
 helper: user5,
-spot_date: @spot_schedule,
+spot_date: @spot_schedule_HR1,
 asker_comment: "Yo homies, I need help",
-helper_comment: nil,
+helper_comment: "NP",
 request_status: "Help arranged"
 )
 
-
 request2 = HelpRequest.create!(
-asker: user4,
-spot_date: @spot_schedule,
+asker: user1,
+helper: nil,
+spot_date: @spot_schedule_HR2,
+request_status: "Pending"
 )
+
+request3 = HelpRequest.create!(
+asker: user4,
+helper: user1,
+spot_date: @spot_schedule_HR3,
+request_status: "Help arranged"
+)
+
+request4 = HelpRequest.create!(
+asker: user5,
+helper: nil,
+spot_date: @spot_schedule_HR3,
+request_status: "Pending"
+)
+puts "Done creating help requests..."
+
 
 puts "=========="
 puts "Seeded with #{Spot.count} spots, #{User.count} users, #{SpotDate.count} pickup details, #{Alert.count} alerts, #{SpotVisit.count} reported visits, and #{HelpRequest.count} help requests."
