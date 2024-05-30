@@ -1,4 +1,10 @@
+
 .simple-calendar {
+
+  .table{
+    border-collapse: separate;
+  }
+line-height: 1.8rem;
   .day {}
 
   .wday-0 {}
@@ -10,7 +16,16 @@
   .wday-6 {}
   // will need to fix alternating weeks
 
-  .today { }
+  .today {
+    background-color: yellow;
+    font-size: 1.6em;
+    padding:30px;
+    border-radius: 5px;
+    border: 1px solid;
+    position: relative; /* 他の要素と重なるようにする */
+    z-index: 2;
+    box-shadow: 5px 5px;
+  }
   .past {}
   .future {}
 
@@ -27,13 +42,12 @@
   margin-right: 50px;
 }
 
+
 .week.current-week {
   td {
     border: 3px solid;
   }
 }
-
-
 
 
 .table-striped {
@@ -42,6 +56,41 @@
 
     th {
       border: 3px solid;
+      border-radius: 5px;
     }
+  }
+}
+
+.calendar-heading {
+  a {
+    text-decoration: none;
+    color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 2px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
+
+
+
+ &:hover {
+  opacity: 1;
+}
+
+.label {
+  display: block;
+  font:
+  1rem 'Fira Sans',
+  sans-serif;
+}
+
+.input,
+.label {
+  margin: 0.4rem 0;
+}
+
+
   }
 }

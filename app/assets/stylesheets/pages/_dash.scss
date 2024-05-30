@@ -41,37 +41,7 @@ margin-top: 10px;
     }
   }
 
-.calendar-heading {
-  a {
-    text-decoration: none;
-    color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 2px 20px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
 
-
- &:hover {
-  opacity: 1;
-}
-
-.label {
-  display: block;
-  font:
-  1rem 'Fira Sans',
-  sans-serif;
-}
-
-.input,
-.label {
-  margin: 0.4rem 0;
-}
-
-
-  }
-}
 
 
 

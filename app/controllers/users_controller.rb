@@ -6,7 +6,7 @@ class UsersController < ApplicationController
    end
 
 
-   def settings
+  def settings
      if current_user.update(user_params)
        redirect_to dash_path, notice: 'Profile was successfully updated.'
      else
