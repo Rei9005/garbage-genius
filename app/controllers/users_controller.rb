@@ -25,6 +25,12 @@ class UsersController < ApplicationController
     @neighbor_help_requests = HelpRequest.where.not(asker: current_user) # where.not is the select anything but the specified value
   end
 
+  def calendar
+    @spot_details = current_user.spot.spot_dates
+    @help_request = HelpRequest.new
+  end
+
+
   def update
     @user = User.find(params[:id])
     @user.update(user_params)

@@ -16,15 +16,67 @@ line-height: 1.8rem;
   .wday-6 {}
   // will need to fix alternating weeks
 
+.request-submit {
+  border: 2px solid;
+  border-radius: 5px;
+  font-weight: 400;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  &:hover {
+    background: rgb(95, 94, 94);
+    color: white;
+  }
+}
+
+  .pending-text {
+    font-weight: 800;
+    font-style: italic;
+  }
+  .box-bottom {
+    margin-top: 12px;
+  }
+p{
+  padding: 0;
+  margin: 0;
+}
+  h3 {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .fa-solid {
+    font-size: 45px;
+  }
+
+.fa-fire{
+  color: rgb(255, 128, 0);
+
+}
+
+.fa-wine-bottle {
+  color: rgb(92, 3, 92);
+
+}
+
+.fa-bottle-water {
+  color: rgb(0, 162, 255);
+}
+
+.fa-champagne-glasses {
+  color: rgb(0, 181, 187);
+}
+  .fa-regular {
+    font-size: 45px;
+  }
+  .fa-recycle {
+    color: rgb(2, 122, 2);
+  }
+.fa-mug-saucer{
+  color: white;
+}
   .today {
-    background-color: yellow;
-    font-size: 1.6em;
-    padding:30px;
-    border-radius: 5px;
-    border: 1px solid;
-    position: relative; /* 他の要素と重なるようにする */
-    z-index: 2;
-    box-shadow: 5px 5px;
+
   }
   .past {}
   .future {}
