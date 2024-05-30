@@ -64,7 +64,6 @@
       <div class="alert-settings">
         <%# <h2>Notifications</h2> %>
         <h1>This section is for Notifications</h1>
-
         <div class="alert-item">
           <%= simple_form_for current_user do |f| %>
             <label for="appt", class="fa-solid fa-moon"> Night before:</label>
@@ -77,9 +76,7 @@
             <% if current_user.morning_alert_at.present? %>
               <input type="time" id="appt" name="user[morning_alert_at]" required value="<%= current_user.morning_alert_at.strftime("%H:%M")%>"/>
             <% else %>
-              <div class="bar-banner">
-                <p>No collection tomorrow</p>
-              </div>
+              <p>No evening alert set</p>
             <% end %>
             <%= f.submit class:"update-user"%>
           <% end %>
