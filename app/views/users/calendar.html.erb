@@ -48,8 +48,8 @@
           <% end %>
         </div>
         <div class="box-bottom">
-          <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-          <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
+        <p><span class="pill-box"><%= spot_detail.scheduled_time.strftime('%H:%M') %></span>: Scheduled</p>
+            <p><span class="pill-box"><%= spot_detail.average_pickup_time.strftime('%H:%M') %></span>: Reported by others</p>
           <% if date > Date.today  %>
             <% if HelpRequest.find_by(asker: current_user , spot_date: spot_detail ) %>
               <p class="pending-text">Request pending...</p>

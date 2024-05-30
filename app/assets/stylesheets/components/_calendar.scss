@@ -40,13 +40,20 @@ p{
   margin: 0;
 }
   h3 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 900;
     text-align: center;
     margin-bottom: 20px;
   }
   .fa-solid {
     font-size: 45px;
+  }
+
+  .pill-box {
+border: white;
+border-radius: 50px;
+background-color: white;
+padding: 0 5px;
   }
 
 .fa-fire{

@@ -5,7 +5,7 @@
 </div>
 <div class = uppper-section>
   <div class="calendar mt-3">
-    <%= calendar(number_of_days: 7, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
+    <%= calendar(number_of_days: 5, start_date_param: :my_date, events: @spot_details, attribute: :date) do |date, spot_details| %>
       <div class="spot_detail d-flex flex-column justify-content-between h-100">
         <div><%= date.strftime("%b %-d")  %></div>
         <% spot_details.each do |spot_detail| %>
@@ -25,7 +25,7 @@
                   <i class="fa-solid fa-faucet <%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
                 </div>
                 <div>
-                  <i class="fa-solid fa-mug-saucer"<%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
+                  <i class="fa-solid fa-mug-saucer<%= date == Date.today ? "fa-beat " : ""%> <%= date == (Date.today + 1) ? "fa-bounce " : ""%>fa-2xl"></i>
                 </div>
               </div>
             <% elsif spot_detail.collection_type == "RP"%>
@@ -49,17 +49,8 @@
             <% end %>
           </div>
           <div class="box-bottom">
-            <p><%= spot_detail.scheduled_time.strftime('%H:%M') %>: Scheduled</p>
-            <p><%= spot_detail.average_pickup_time.strftime('%H:%M') %>: Reported by others</p>
-            <% if date > Date.today  %>
-              <% if HelpRequest.find_by(asker: current_user , spot_date: spot_detail ) %>
-                <p class="pending-text">Request pending...</p>
-              <% else %>
-                <%= simple_form_for([spot_detail, @help_request]) do |f| %>
-                  <%= f.submit  "Request Help", class:"request-submit"%>
-                <% end  %>
-              <% end %>
-            <% end %>
+            <p><span class="pill-box color-white"><%= spot_detail.scheduled_time.strftime('%H:%M') %></span>: Scheduled</p>
+            <p><span class="pill-box"><%= spot_detail.average_pickup_time.strftime('%H:%M') %></span>: Reported by others</p>
           </div>
         <% end %>
       <% end %>
