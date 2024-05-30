@@ -1,14 +1,15 @@
+<div class="spot-card">
+<p class="spot-card-address"><%= spot.address %></p>
 <% if spot.id == current_user.spot_id  %>
   <div>
     <p class="your-location">Your drop-off spot</p>
   </div>
-  <div>
   <% else %>
     <div>
       <%= simple_form_for(current_user) do |f| %>
-        <%= f.input :spot_id, value:spot.id, as: :hidden %>
+        <%= f.input :spot_id, input_html:{value: spot.id}, as: :hidden %>
         <%= f.submit "Set Spot", class: 'set-spot-button' %>
       <% end %>
     </div>
-    <div>
-    <% end %>
+<% end %>
+</div>

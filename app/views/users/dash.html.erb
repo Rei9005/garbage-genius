@@ -72,6 +72,7 @@
   <div class="row">
     <div class="col-6">
       <div class="alert-settings">
+
         <%# <h2>Notifications</h2> %>
 
         <h2>Alerts</h2>
@@ -90,7 +91,18 @@
             <% else %>
               <p>No evening alert set</p>
             <% end %>
-            <%= f.submit class:"update-user"%>
+            <%= f.submit "Set Alarms", class:"update-user"%>
+          <% end %>
+      <div class="alert-settings">
+        <h1>Truck Arrival Time</h1>
+        <div class="alert-item">
+          <%= simple_form_for current_user do |f| %>
+            <% if current_user.evening_alert_at.present? %>
+              <input type="time" id="appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
+            <% else %>
+              <p>No evening alert set</p>
+            <% end %>
+            <%= f.submit "Report", class:"update-user"%>
           <% end %>
         </div>
       </div>
@@ -125,5 +137,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
