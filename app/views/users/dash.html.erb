@@ -166,7 +166,7 @@
         <div></div>
       </div>
     <% end %>
-    <p>This is the next section</p>
+    <h1>-- This text is to be deleted --</h1>
     <% if @neighbor_help_requests %>
       <h2>My Neighbor's Requests</h2>
       <% @neighbor_help_requests.each do |neighbor_help_request| %>
@@ -217,14 +217,29 @@
               <% end %>
             </div>
           </div>
-          <p>way inside div</p>
-        </div>
-        <p>inside div</p>
-      <% end %>
-      <p>mid div
-      </p>
+          <% if neighbor_help_request.helper %>
+            <div>
+              <h3><%=  neighbor_help_request.helper&.name %></h3>
+              <p>will help</p>
+              <h3><%=  neighbor_help_request.asker.name %></h3>
+            </div>
+            <div>
+              -----
+            </div>
+          <% else %>
+            <div>
+              <h3><%=  neighbor_help_request.asker&.name %></h3>
+              <p>needs help</p>
+            </div>
+            <div>
+              <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.asker&.line_id %></h5>
+          </div>
+        <% end %>
+        <div></div>
+      </div>
     <% end %>
-    <p>outside end</p>
-  </div>
+  </p>
+<% end %>
+</div>
 </div>
 </div>
