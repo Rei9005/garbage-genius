@@ -21,6 +21,8 @@ class UsersController < ApplicationController
     @spot_details = current_user.spot.spot_dates
     @user_spot_id = current_user.spot_id
     @help_request = HelpRequest.new
+    @asker_help_requests = HelpRequest.where(asker: current_user) #issue ishere. give it a thought
+    @neighbor_help_requests = HelpRequest.where.not(asker: current_user) # where.not is the select anything but the specified value
   end
 
   def calendar
@@ -38,6 +40,8 @@ class UsersController < ApplicationController
     else
       render 'spots', status: :uprocessable_entity
     end
+
+   console
   end
 
     private
