@@ -181,10 +181,50 @@
             <div>
               <p><%=  neighbor_help_request.spot_date.date.strftime("%b %-d") %></p>
             </div>
+            <div>
+              <% if neighbor_help_request.spot_date.collection_type == "C" %>
+                <div class="text-center">
+                  <i class="fa-solid fa-fire fa-2xl"></i>
+                </div>
+              <% elsif neighbor_help_request.spot_date.collection_type == "GCM"%>
+                <div class="icons d-flex justify-content-between">
+                  <div>
+                    <i class="fa-solid fa-champagne-glasses fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-faucet fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-mug-saucerfa-2xl"></i>
+                  </div>
+                </div>
+              <% elsif neighbor_help_request.spot_date.collection_type == "RP"%>
+                <div class="text-center">
+                  <i class="fa-solid fa-recycle fa-2xl"></i>
+                </div>
+              <% elsif neighbor_help_request.spot_date.collection_type == "UPBBC"%>
+                <div class="icons d-flex justify-content-between">
+                  <div>
+                    <i class="fa-regular fa-newspaper fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-bottle-water fa-2xl"></i>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-wine-bottle fa-2xl"></i>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
+          <p>way inside div</p>
         </div>
+        <p>inside div</p>
       <% end %>
+      <p>mid div
+      </p>
     <% end %>
+    <p>outside end</p>
   </div>
 </div>
 </div>
