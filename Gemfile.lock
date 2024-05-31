@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: ae12516978a07b75bb3f929829170b7f5716f53c
+  revision: d3a594920a14a692836392b5a7c0cd4708e25cb3
   specs:
-    simple_form (5.3.0)
+    simple_form (5.3.1)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
 
@@ -106,7 +106,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.2.3)
+    concurrent-ruby (1.3.1)
     connection_pool (2.4.1)
     crass (1.0.6)
     csv (3.3.0)
@@ -161,7 +161,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    minitest (5.23.0)
+    minitest (5.23.1)
     msgpack (1.7.2)
     mutex_m (0.2.0)
     net-imap (0.4.11)
@@ -233,10 +233,10 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.2.1)
-    rdoc (6.6.3.1)
+    rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
-    reline (0.5.7)
+    reline (0.5.8)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)
@@ -293,7 +293,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.14)
+    zeitwerk (2.6.15)
 
 PLATFORMS
   aarch64-linux

@@ -12,10 +12,11 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   after_create :set_default_alert
+  after_create_commit :check_geocode
 
   def set_default_alert
     self.update(
-    evening_alert: true, 
+    evening_alert: true,
     morning_alert: true,
     morning_alert_at: Time.parse('8am'),
     evening_alert_at: Time.parse('9pm')
@@ -30,6 +31,13 @@ class User < ApplicationRecord
 
   private
 
+  # set fall back geocode location if geocoder fail on production during demo day
+  def check_geocode
+    self.latitude = 35.6549766 if latitude.nil?
+    self.longitude = 139.7368552 if longitude.nil?
+    save
+  end
+
   def send_morning_alert
     LineNotificationService.new(line_id).send("Good morning!")
   end
@@ -37,4 +45,6 @@ class User < ApplicationRecord
   def send_evening_alert
     LineNotificationService.new(line_id).send("Good evening!")
   end
+
+
 end
