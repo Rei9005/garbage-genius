@@ -96,6 +96,51 @@ spot10 = Spot.create!(
   label: "An arbitrary spot"
 )
 
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.655244391588255,
+  longitude: 139.73691276886458,
+  label: "An arbitrary spot"
+)
+
+# The next 4 spots were made for the pitch
+
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.6551504956737,
+  longitude: 139.7368908194105,
+  label: "An arbitrary spot"
+)
+
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.65508720214673,
+  longitude: 139.736891914624,
+  label: "An arbitrary spot"
+)
+
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.65499666599345,
+  longitude: 139.73686484664287,
+  label: "An arbitrary spot"
+)
+
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.654943179680835,
+  longitude: 139.7368686240654,
+  label: "An arbitrary spot"
+)
+
+spot1 = Spot.create!(
+  address: "An arbitrary spot",
+  latitude: 35.65489078303709,
+  longitude: 139.73685094381582,
+  label: "An arbitrary spot"
+)
+
+
 # spot11 = Spot.create!( address: "An arbitrary spot", latitude: 35.65261608, longitude: 139.74024301, label: "An rbitrary spot" )
 # spot12 = Spot.create!( address: "An arbitrary spot", latitude: 35.63938127, longitude: 139.73638016, label: "An rbitrary spot" )
 # spot13 = Spot.create!( address: "An arbitrary spot", latitude: 35.65695674, longitude: 139.73163679, label: "An rbitrary spot" )
@@ -654,27 +699,7 @@ user4 = User.create!(
   email: "oscar@email.com",
   password: "444444",
   name: "Oscar",
-  line_id: "oscar",
-  address: "",
-  spot_id: spot1.id,
-  # Oscar is simply assigned to spot1
-)
-
-user5 = User.create!(
-  email: "elmo@email.com",
-  password: "555555",
-  name: "Elmo",
-  line_id: "elmo",
-  address: "",
-  spot_id: spot1.id,
-  # Oscar is simply assigned to spot1
-)
-
-user6 = User.create!(
-  email: "bert@email.com",
-  password: "666666",
-  name: "Bert",
-  line_id: "bert",
+  line_id: "oscar_the_grouch",
   address: "",
   spot_id: spot1.id,
   # Oscar is simply assigned to spot1
@@ -856,34 +881,10 @@ puts "Creating help requests..."
 
 
 request1 = HelpRequest.create!(
-asker: user1,
-helper: user5,
-spot_date: @spot_schedule_HR1,
-asker_comment: "Yo homies, I need help",
-helper_comment: "NP",
-request_status: "accepted"
-)
-
-request2 = HelpRequest.create!(
-asker: user1,
-helper: nil,
-spot_date: @spot_schedule_HR2,
-request_status: "pending"
-)
-
-request3 = HelpRequest.create!(
 asker: user4,
-helper: user1,
-spot_date: @spot_schedule_HR3,
-request_status: "accepted"
+spot_date: @spot_schedule_HR3
 )
 
-request4 = HelpRequest.create!(
-asker: user5,
-helper: nil,
-spot_date: @spot_schedule_HR3,
-request_status: "pending"
-)
 puts "Done creating help requests..."
 
 
