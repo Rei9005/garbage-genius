@@ -7,4 +7,6 @@ class HelpRequest < ApplicationRecord
 
   validates :asker, presence: true
   validates :spot_date, presence: true
+
+  enum request_status: { pending: 'pending', accepted: 'accepted'}, _default: :pending
 end
