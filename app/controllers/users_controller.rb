@@ -41,7 +41,6 @@ class UsersController < ApplicationController
       render 'spots', status: :uprocessable_entity
     end
 
-   console
   end
 
     private
