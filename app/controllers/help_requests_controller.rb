@@ -14,6 +14,7 @@ class HelpRequestsController < ApplicationController
     help_request = HelpRequest.find(params[:id])
     help_request.helper = request_params[:request_status] == 'accepted' ? current_user : nil
     help_request.update(request_params)
+    
   end
 
   private
