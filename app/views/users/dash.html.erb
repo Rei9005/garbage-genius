@@ -161,19 +161,17 @@
               <h3><%=  asker_help_request.helper&.name %></h3>
               <p>will help you</p>
             </div>
-
             <div class="col-3">
               <i class="fa-brands fa-line fa-2xl" style="color: #06c754;">
               </i>
               <%= asker_help_request.helper&.line_id %>
-
             </div>
           <% else %>
             <div class="col-3">
-              -----
+              Waiting for neighbor...
             </div>
             <div class="col-3">
-              -----
+              Line ID TBD
             </div>
           <% end %>
         </div>
