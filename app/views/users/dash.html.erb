@@ -58,41 +58,47 @@
   </div>
 </div>
 <div class="container mt-5">
-  <div class="row">
-    <div class = "lower-left col-6">
+  <div class="row mb-5">
+    <div class = "lower-left col-6 d-flex flex-column justify-content-between">
       <div class="alert-settings">
         <h2>Alerts</h2>
-        <div class="alert-item">
+
+        <div class="alert-box">
           <%= simple_form_for current_user do |f| %>
-            <label for="appt", class="fa-solid fa-moon"> Night before:</label>
+            <div class="alert-item d-flex justify-content-around">
+              <div class="evening-alert alert-item-section">
+                <label for="evening_appt" class> Night before:</label>
+                <% if current_user.evening_alert_at.present? %>
+                  <input type="time" id="evening_appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
+                <% else %>
+                  <p>No evening alert set</p>
+                <% end %>
+              </div>
+              <div class="morning-alert alert-item-section">
+                <label for="morning_appt"> Morning:</label>
+                <% if current_user.morning_alert_at.present? %>
+                  <input type="time" id="morning_appt" name="user[morning_alert_at]" required value="<%= current_user.morning_alert_at.strftime("%H:%M")%>"/>
+                <% else %>
+                  <p>No morning alert set</p>
+                <% end %>
+                <%= f.submit "Set Alarms", class:"alert-btn"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="report-collection">
+        <h2 class="text-center">What was today's collection time?</h2>
+        <div class="report-item text-center">
+
+          <%= simple_form_for current_user do |f| %>
             <% if current_user.evening_alert_at.present? %>
               <input type="time" id="appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
             <% else %>
               <p>No evening alert set</p>
             <% end %>
-            <label for="appt", class="fa-regular fa-sun"> Morning:</label>
-            <% if current_user.morning_alert_at.present? %>
-              <input type="time" id="appt" name="user[morning_alert_at]" required value="<%= current_user.morning_alert_at.strftime("%H:%M")%>"/>
-            <% else %>
-              <p>No evening alert set</p>
-            <% end %>
-            <%= f.submit "Set Alarms", class:"update-user"%>
+            <%= f.submit "Report", class:"alert-btn"%>
           <% end %>
-          <p></p>
-          <p></p>
-          <div class="report-collection">
-            <h2>Report Collection Time</h2>
-            <div class="report-item">
-              <%= simple_form_for current_user do |f| %>
-                <% if current_user.evening_alert_at.present? %>
-                  <input type="time" id="appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
-                <% else %>
-                  <p>No evening alert set</p>
-                <% end %>
-                <%= f.submit "Report", class:"update-user"%>
-              <% end %>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -147,6 +153,7 @@
               <% end %>
             </div>
           </div>
+
           <% if asker_help_request.helper %>
             <div>
               <h3><%=  asker_help_request.helper&.name %></h3>
@@ -263,4 +270,5 @@
 <% end %>
 </div>
 </div>
+
 </div>

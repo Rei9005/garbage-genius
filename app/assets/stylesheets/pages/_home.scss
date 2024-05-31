@@ -1,21 +1,17 @@
 // Specific CSS for your home-page
 .home-image {
   height:100%;
-  width: 650px;
+  width: 50vw;
   object-fit: cover;
   margin: auto;
   padding:0;
   display: block;
-
-  // &:hover {
-  //   transform: scale(1.15);
-  // }
 }
 .arm-image {
   position: absolute;
   right: 0px;
   top: 0px;
-  width: 450px;
+  width: 35vw;
 }
 
 .garbages-image{
@@ -51,6 +47,7 @@
   height: 50vh;
   background-color: rgb(103, 211, 241);
   padding: 50px 50px;
+  width: 100%;
   h2 {
     font-weight: 800;
   }
@@ -61,6 +58,7 @@
   margin-top: 100px;
   background: linear-gradient(to bottom, #FBF6EF 50%, rgb(103, 211, 241) 50%);
   position: relative;
+  width: 100%;
 }
 
 
@@ -92,4 +90,130 @@
   text-decoration: none;
   cursor: pointer;
   z-index: 999;
+}
+
+
+
+
+
+
+
+
+
+
+// Smallest device
+@media (min-width: 300px) and (max-width: 450px) {
+
+// Specific CSS for your home-page
+.home-image {
+  height:100%;
+  width: 70vw;
+  display: block;
+}
+.arm-image {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 35vw;
+}
+
+.garbages-image{
+  height:100%;
+  width: 60vw;
+  object-fit: cover;
+  margin: auto;
+  padding:0;
+  display: block;
+
+}
+
+.garbages-image2{
+
+  display: none;
+
+}
+
+.body {
+  background-color: #FBF6EF;
+}
+
+.who-we-are {
+  height: 300px;
+ background-color: rgb(103, 211, 241);
+
+ padding: 0vw 10vw;
+
+
+ .whoweare {
+  padding:  0px 0px;
+
+ }
+
+ h2 {
+  font-weight: 800;
+  text-align: center;
+ }
+
+ p{
+  text-align: center;
+ }
+}
+
+.why-sign-up {
+  height: 100%;
+  background-color: rgb(103, 211, 241);
+  padding: 10vw 10vw;
+  width: 100%;
+  h2 {
+    font-weight: 800;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.garbage-genius-home {
+  height: 300px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, #FBF6EF 50%, rgb(103, 211, 241) 50%);
+  position: relative;
+  width: 100%;
+}
+
+
+// .why-sign-up{
+
+//   height: 100vh;
+// }
+
+
+
+.arrow-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+
+.scroll-top-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+
+
+
+
 }
