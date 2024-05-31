@@ -59,10 +59,9 @@
 </div>
 <div class="container mt-5">
   <div class="row mb-5">
-    <div class = "lower-left col-6 d-flex flex-column justify-content-between">
+    <div class = "lower-left col-6">
       <div class="alert-settings">
         <h2>Alerts</h2>
-
         <div class="alert-box">
           <%= simple_form_for current_user do |f| %>
             <div class="alert-item d-flex justify-content-around">
@@ -90,7 +89,6 @@
       <div class="report-collection">
         <h2 class="text-center">What was today's collection time?</h2>
         <div class="report-item text-center">
-
           <%= simple_form_for current_user do |f| %>
             <% if current_user.evening_alert_at.present? %>
               <input type="time" id="appt" name="user[evening_alert_at]" required value="<%= current_user.evening_alert_at.strftime("%H:%M")%>"/>
@@ -103,14 +101,19 @@
       </div>
     </div>
     <div class = "lower-right col-6">
-      <h2>My Requests</h2>
-      <%= link_to "Ask Neighbors for Help ", calendar_path, class: "dash-button" %>
+      <div class="request-header row align-items-end">
+        <div class="col-3"></div>
+        <h2 class="col-6 text-center">My Requests</h2>
+        <div class="col-3 "style="text-align: center;">
+          <%= link_to "Ask for Help ", calendar_path, class: "request-btn" %>
+        </div>
+      </div>
       <% @asker_help_requests.each do |asker_help_request| %>
-        <div class="request">
-          <div class="request-status">
+        <div class="request row">
+          <div class="request-status col-3 text-center ">
             <span><%=  asker_help_request.pending? ? 'Pending' : 'Help Accepted' %></span>
           </div>
-          <div class="request-info">
+          <div class="request-info col-3 text-center">
             <div>
               <p><%=  asker_help_request.spot_date.date.strftime('%a') %></p>
             </div>
@@ -153,122 +156,126 @@
               <% end %>
             </div>
           </div>
-
           <% if asker_help_request.helper %>
-            <div>
+            <div class="col-3">
               <h3><%=  asker_help_request.helper&.name %></h3>
               <p>will help you</p>
             </div>
-            <div>
-              <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= asker_help_request.helper&.line_id %></h5>
-          </div>
-        <% else %>
-          <div>
-            Waiting for a neighbor
-          </div>
-          <div>
-            Line ID TBD
-          </div>
-        <% end %>
-        <div></div>
-      </div>
-    <% end %>
-    <% if @neighbor_help_requests %>
-      <h2>My Neighbor's Requests</h2>
-      <% @neighbor_help_requests.each do |neighbor_help_request| %>
-        <div class="request">
-          <% if neighbor_help_request.pending? %>
-            <%= simple_form_for neighbor_help_request do |f| %>
-              <%= f.input :request_status, as: :hidden, input_html: { value: "accepted"} %>
-              <%= f.submit "Help Out", class: 'btn btn-primary' %>
-            <% end %>
+
+            <div class="col-3">
+              <i class="fa-brands fa-line fa-2xl" style="color: #06c754;">
+              </i>
+              <%= asker_help_request.helper&.line_id %>
+
+            </div>
           <% else %>
-            <div class="request-status">
-              <span>Help Accepted</span>
+            <div class="col-3">
+              -----
+            </div>
+            <div class="col-3">
+              -----
             </div>
           <% end %>
-          <div class="request-info">
-            <div>
-              <p><%=  neighbor_help_request.spot_date.date.strftime('%a') %></p>
-            </div>
-            <div>
-              <p><%=  neighbor_help_request.spot_date.date.strftime("%b %-d") %></p>
-            </div>
-            <div>
-              <% if neighbor_help_request.spot_date.collection_type == "C" %>
-                <div class="text-center">
-                  <i class="fa-solid fa-fire fa-2xl"></i>
-                </div>
-              <% elsif neighbor_help_request.spot_date.collection_type == "GCM"%>
-                <div class="icons d-flex justify-content-between">
-                  <div>
-                    <i class="fa-solid fa-champagne-glasses fa-2xl"></i>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-faucet fa-2xl"></i>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-mug-saucerfa-2xl"></i>
-                  </div>
-                </div>
-              <% elsif neighbor_help_request.spot_date.collection_type == "RP"%>
-                <div class="text-center">
-                  <i class="fa-solid fa-recycle fa-2xl"></i>
-                </div>
-              <% elsif neighbor_help_request.spot_date.collection_type == "UPBBC"%>
-                <div class="icons d-flex justify-content-between">
-                  <div>
-                    <i class="fa-regular fa-newspaper fa-2xl"></i>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-bottle-water fa-2xl"></i>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-wine-bottle fa-2xl"></i>
-                  </div>
+        </div>
+      <% end %>
+      <% if @neighbor_help_requests %>
+        <h2 class="text-center mt-5">My Neighbor's Requests</h2>
+        <% @neighbor_help_requests.each do |neighbor_help_request| %>
+          <div class="request row">
+            <div class="col-3" style="text-align: center;">
+              <% if neighbor_help_request.pending? %>
+                <%= simple_form_for neighbor_help_request do |f| %>
+                  <%= f.input :request_status, as: :hidden, input_html: { value: "accepted"} %>
+                  <%= f.submit "Help Out", class: 'alert-btn' %>
+                <% end %>
+              <% else %>
+                <div class="request-status">
+                  <span>Help Accepted</span>
                 </div>
               <% end %>
             </div>
-          </div>
-          <% if neighbor_help_request.helper %>
-            <div>
-              <h3><%=  neighbor_help_request.helper&.name %></h3>
-              <p>will help</p>
-              <h3><%=  neighbor_help_request.asker.name %></h3>
-            </div>
-            <div>
+            <div class="request-info col-3 " style="text-align: center;">
               <div>
-                <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.helper.line_id %>
+                <p><%=  neighbor_help_request.spot_date.date.strftime('%a') %></p>
               </div>
               <div>
-                <p>
-                </p>
-                <p>
-                </p>
-                <p>
-                </p>
-                <p>
-                </p>
+                <p><%=  neighbor_help_request.spot_date.date.strftime("%b %-d") %></p>
               </div>
               <div>
-                <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.asker.line_id %>
+                <% if neighbor_help_request.spot_date.collection_type == "C" %>
+                  <div class="text-center">
+                    <i class="fa-solid fa-fire fa-2xl"></i>
+                  </div>
+                <% elsif neighbor_help_request.spot_date.collection_type == "GCM"%>
+                  <div class="icons d-flex justify-content-between">
+                    <div>
+                      <i class="fa-solid fa-champagne-glasses fa-2xl"></i>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-faucet fa-2xl"></i>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-mug-saucerfa-2xl"></i>
+                    </div>
+                  </div>
+                <% elsif neighbor_help_request.spot_date.collection_type == "RP"%>
+                  <div class="text-center">
+                    <i class="fa-solid fa-recycle fa-2xl"></i>
+                  </div>
+                <% elsif neighbor_help_request.spot_date.collection_type == "UPBBC"%>
+                  <div class="icons d-flex justify-content-between">
+                    <div>
+                      <i class="fa-regular fa-newspaper fa-2xl"></i>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-bottle-water fa-2xl"></i>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-wine-bottle fa-2xl"></i>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
-          <% else %>
-            <div>
-              <h3><%=  neighbor_help_request.asker&.name %></h3>
-              <p>needs help</p>
-            </div>
-            <div>
-              <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.asker&.line_id %></h5>
+            <% if neighbor_help_request.helper %>
+              <div class="col-3">
+                <h3><%=  neighbor_help_request.helper&.name %></h3>
+                <p>will help</p>
+                <h3><%=  neighbor_help_request.asker.name %></h3>
+              </div>
+              <div class="col-3">
+                <div>
+                  <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.helper.line_id %>
+                </div>
+                <div>
+                  <p>
+                  </p>
+                  <p>
+                  </p>
+                  <p>
+                  </p>
+                  <p>
+                  </p>
+                </div>
+                <div>
+                  <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.asker.line_id %>
+                </div>
+              </div>
+            <% else %>
+              <div class="col-3 " >
+                <h3><%=  neighbor_help_request.asker&.name %></h3>
+                <p>needs help</p>
+              </div>
+              <div class="col-3" >
+                <div>
+                  <i class="fa-brands fa-line fa-2xl" style="color: #06c754;"></i>     <%= neighbor_help_request.asker&.line_id %>
+                </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
-        <div></div>
-      </div>
+      </p>
     <% end %>
-  </p>
-<% end %>
+  </div>
 </div>
-</div>
-
 </div>
